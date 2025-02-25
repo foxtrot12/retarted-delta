@@ -7,7 +7,7 @@ export const commonData = {
         "projects": "Projects"
     },
     "basics": {
-        "name": "Chinmaya Sharma",
+        "name": ["Chinmaya","Sharma"],
         "email": "s.chinmaya@myyahoo.com",
         "website": "https://chini.vercel.app/"
     },

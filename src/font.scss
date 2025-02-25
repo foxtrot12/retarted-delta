@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900; // Variable range
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.roboto-italic {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+}
+
+.roboto-mono {
+  font-family: "Roboto Mono", monospace;
+}
+
+.roboto-mono-italic {
+  font-family: "Roboto Mono", monospace;
+  font-style: italic;
+}
+
+.wt300{
+    font-weight: 300;
+}
