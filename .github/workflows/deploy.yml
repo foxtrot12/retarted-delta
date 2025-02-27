@@ -1,9 +1,9 @@
-name: Deploy React App to GitHub Pages
+name: Deploy Vite React App to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Change this if your default branch is different
+      - main  
 
 jobs:
   build-and-deploy:
@@ -16,16 +16,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Use the latest stable version
+          node-version: 18  
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build React App
-        run: npm run build
+      - name: Build Vite React App
+        run: npm run build  
+
+      - name: List Files (Debugging Step)
+        run: ls -la 
+
+      - name: Verify Build Directory (Debugging Step)
+        run: ls -la dist  
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # The branch where the build will be deployed
-          folder: build  # The output folder from `npm run build`
+          branch: gh-pages  
+          folder: dist  
