@@ -1,0 +1,48 @@
+.flex {
+    display: flex;
+
+    &.col {
+      flex-direction: column;
+    }
+
+    &.grow {
+      flex-grow: 1;
+    }
+
+    &.one {
+      flex: 1;
+    }
+
+    &.spcBw {
+      justify-content: space-between;
+    }
+
+    &.spcAround {
+      justify-content: space-around;
+    }
+
+    &.spcEven {
+      justify-content: space-evenly;
+    }
+
+    &.verHorCenter {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.contentCtr {
+      justify-content: center;
+    }
+
+    &.contentEnd {
+      justify-content: flex-end;
+    }
+
+    &.itemsCtr {
+      align-items: center;
+    }
+
+    &.inline {
+      display: inline-flex;
+    }
+  }
