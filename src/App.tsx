@@ -14,6 +14,7 @@ function getQueryParams() {
     phone: params.get("phone"),
     email: params.get("email"),
     skills: params.get("skills"),
+    skillInd:params.get("sind")
   };
 }
 
@@ -21,8 +22,10 @@ function getResumeData(
   rType: RTypeT,
   phone: string | null,
   email: string | null,
-  skills: string | null
+  skills: string | null,
+  skillInd:string|null
 ): ResumeData {
+  const skillIndex = !Number.isNaN(Number(skillInd)) ? Number(skillInd) : 2
   let specData;
 
   switch (rType) {
@@ -46,8 +49,8 @@ function getResumeData(
 
   if (skills) {
     const skillsArr = skills?.split("_");
-    specData.skills[2].keywords = [
-      ...specData.skills[2].keywords,
+    specData.skills[skillIndex].keywords = [
+      ...specData.skills[skillIndex].keywords,
       ...skillsArr,
     ];
   }
@@ -57,13 +60,13 @@ function getResumeData(
 }
 
 function App() {
-  const { template, phone, email, skills } = useMemo(
+  const { template, phone, email, skills,skillInd } = useMemo(
     () => getQueryParams(),
     []
   );
 
   const resumeData = useMemo(
-    () => getResumeData(template ?? "std", phone, email, skills),
+    () => getResumeData(template ?? "std", phone, email, skills,skillInd),
     []
   );
 

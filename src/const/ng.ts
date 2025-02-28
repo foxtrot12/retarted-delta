@@ -1,55 +1,5 @@
 export const ngData = {
-  "work": [
-    {
-      "website": "",
-      "endDate": "Present",
-      "highlights": [
-        "Worked on development of  SIA, SHL's AI  Screener",
-        "Assumed increased  leadership responsibilities as a Software Engineer.",
-        "Developed new features for implementation of WCAG patterns across products",
-        "Led a project to systematically eliminate legacy vulnerabilities from the codebase, ensuring enhanced security and stability."
-      ],
-      "company": " SHL India",
-      "position": "Software Engineer",
-      "location": "Gurgaon",
-      "startDate": "March 2024"
-    },
-    {
-      "highlights": [
-        "Played a pivotal role in launching TC Plus, a new assessments platform.",
-        "Developed innovative, media based assessments to enhance user engagement.",
-        "Worked on development of  Process Monitoring -  a simulation based assessment",
-        "Led significant migration projects, transitioning from AngularJS to Angular and React.",
-        "Focused on improving software accessibility in alignment with WCAG guidelines.",
-        "Worked on developing ATOM, a form management library reducing development time across teams"
-      ],
-      "company": " SHL India",
-      "position": "Associate Software Engineer",
-      "location": "Gurgaon",
-      "startDate": "January 2022",
-      "endDate": "March 2024"
-    },
-    {
-      "highlights": [
-        ""
-      ],
-      "company": "Marksman Technologies",
-      "position": "Web Development Intern",
-      "location": "Noida",
-      "startDate": "May 2021",
-      "endDate": "July 2021"
-    },
-    {
-      "highlights": [
-        ""
-      ],
-      "company": "Nethuts",
-      "position": "Web Development Intern",
-      "location": "Kolkata",
-      "startDate": "September 2020",
-      "endDate": "December 2020"
-    }
-  ],
+
   "skills": [
     {
       "level": "",
