@@ -25,7 +25,7 @@ function getResumeData(
   skills: string | null,
   skillInd:string|null
 ): ResumeData {
-  const skillIndex = !Number.isNaN(Number(skillInd)) ? Number(skillInd) : 2
+  const skillIndex = (skillInd && !Number.isNaN(Number(skillInd))) ? Number(skillInd) : 2
   let specData;
 
   switch (rType) {
