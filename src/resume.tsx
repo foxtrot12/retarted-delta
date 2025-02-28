@@ -6,7 +6,7 @@ import { ResumeData } from "./const/common";
 
 
 
-const Resume : React.FC<{resumeData : ResumeData}>= ({resumeData}) => {
+const Resume: React.FC<{ resumeData: ResumeData }> = ({ resumeData }) => {
 
   return (
     <div className="resume-container roboto-mono">
@@ -40,14 +40,13 @@ const Resume : React.FC<{resumeData : ResumeData}>= ({resumeData}) => {
           <div key={index} className="work-item">
             <div className="item-header">
               <h3 className="job-title">
-                {job.position} at {job.company}
+                {job.position} at {job.company}, <p className="roboto-mono-italic wt200">{job.location}</p>
               </h3>
               <span className="job-date">
                 {job.startDate} – {job.endDate}
               </span>
             </div>
             <div className="job-details">
-              {job.location && <p>Location: {job.location}</p>}
               {job.highlights &&
                 job.highlights.filter((h) => h.trim() !== "").length > 0 && (
                   <ul>

@@ -1,123 +1,123 @@
 .resume-container {
-    padding: 0 20px 20px 20px;
-    background-color: #f8f8f8;
+  padding: 0 20px 20px 20px;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 8px;
+  a {
     color: #333;
-    a {
-      color: #333;
-    }
   }
-  
-  .resume-header {
-    text-align: center;
-    padding: 0 20px 0;
-    border-bottom: 2px solid #ccc;
-    margin-bottom: 20px;
-  }
-  
-  .resume-name {
+}
+
+.resume-header {
+  text-align: center;
+  padding: 0 20px 0;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.resume-name {
+  margin: 0;
+  font-size: 32px; /* 42px → 21px */
+  display: inline-flex;
+  gap: 5px;
+  p {
     margin: 0;
-    font-size: 40px; // 2.5em * 16 = 40px
+  }
+}
+
+.resume-contact {
+  margin-top: 8px;
+  font-size: 8px; /* 12px → 6px */
+  color: #555;
+  a {
     display: inline-flex;
     gap: 5px;
-    p {
-      margin: 0;
-    }
-  }
-  
-  .resume-contact {
-    margin-top: 8px;
-    font-size: 15.2px; // 0.95em * 16 = 15.2px
-    color: #555;
-    a {
-      display: inline-flex;
-      gap: 5px;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  
-  .resume-section {
-    margin-bottom: 30px;
-  }
-  
-  .section-title {
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 8px;
-    font-size: 28.8px; // 1.8em * 16 = 28.8px
-    margin-bottom: 15px;
-  }
-  
-  .item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-  
-  .job-title,
-  .award-title,
-  .education-institution,
-  .project-title-line {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-size: 20.8px; // 1.3em * 16 = 20.8px
-    .rtSide {
-      font-size: 12.8px; // 0.8em * 16 = 12.8px
-      display: flex;
-      flex-direction: column;
-      align-content: space-between;
-      justify-items: center;
+  }
+}
+
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+  font-size: 12px; /* 17.28px → 8.64px, rounded to 9px */
+  margin-bottom: 15px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.job-title,
+.award-title,
+.education-institution,
+.project-title-line {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px; /* 16px → 8px */
+  .rtSide {
+    font-size: 6px; /* 12px → 6px */
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-items: center;
+    gap: 5px;
+    a {
+      text-align: right;
+    }
+    .skills {
       gap: 5px;
-      a {
-        text-align: right;
-      }
-      .skills {
-        gap: 5px;
-        display: inline-flex;
-        p {
-          margin: 0;
-        }
+      display: inline-flex;
+      p {
+        margin: 0;
       }
     }
   }
-  
-  .job-date,
-  .award-date,
-  .education-date {
-    font-size: 14.4px; // 0.9em * 16 = 14.4px
-    color: #777;
-  }
-  
-  .job-details,
-  .award-details,
-  .education-details,
-  .project-description {
-    margin-top: 8px;
-  }
-  
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .skill-category {
-    font-size: 15.2px; // 0.95em * 16 = 15.2px
-  }
-  
-  a {
-    color: #1a0dab;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .textHollow {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000000;
-    color: transparent !important;
-  }
-  
+}
+
+.job-date,
+.award-date,
+.education-date {
+  font-size: 6px; /* 12px → 6px */
+  color: #777;
+}
+
+.job-details,
+.award-details,
+.education-details,
+.project-description {
+  margin-top: 8px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+// .skill-category {
+//   font-size: 5px; /* 9.12px → 4.56px, rounded to 5px */
+// }
+
+a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.textHollow {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+  color: transparent !important;
+}
