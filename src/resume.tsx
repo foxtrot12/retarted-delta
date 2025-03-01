@@ -68,7 +68,7 @@ const Resume: React.FC<{
             <div className="item-header">
               <h3 className="job-title">
                 {job.position} at {job.company},{" "}
-                <p className={`${italicFontClass ?? "roboto-mono-italic"}`}>
+                <p className={`${italicFontClass ?? "roboto-mono-italic"} wt200`}>
                   {job.location}
                 </p>
               </h3>
@@ -120,7 +120,7 @@ const Resume: React.FC<{
                 <span
                   className={`${
                     italicFontClass ?? "roboto-mono-italic"
-                  } skills`}
+                  } skills wt200`}
                 >
                   {project.keywords.map((kWord, ind) => (
                     <p key={ind}>{kWord}</p>
