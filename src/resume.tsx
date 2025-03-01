@@ -1,15 +1,42 @@
-import React, { memo } from "react";
+import React, { CSSProperties, memo, useMemo } from "react";
 import "./resume.scss";
 import { MdEmail } from "react-icons/md";
 import { FaMobileAlt, FaLink } from "react-icons/fa";
 import { ResumeData } from "./const/common";
 
+const Resume: React.FC<{
+  resumeData: ResumeData;
+  pColor: string | null;
+  sColor: string | null;
+  tColor: string | null;
+  bgColor: string | null;
+  fontClass: string | null;
+  italicFontClass: string | null;
+}> = ({
+  resumeData,
+  pColor,
+  sColor,
+  tColor,
+  bgColor,
+  fontClass,
+  italicFontClass,
+}) => {
+  const style = useMemo(() => {
+    const style: CSSProperties & Record<string, string | undefined> = {};
 
+    pColor ? (style["--primaryColor"] = pColor) : null;
+    sColor ? (style["--secondaryColor"] = sColor) : null;
+    tColor ? (style["--tertiaryColor"] = tColor) : null;
+    bgColor ? (style["--bgColor"] = bgColor) : null;
 
-const Resume: React.FC<{ resumeData: ResumeData }> = ({ resumeData }) => {
+    return style;
+  }, []);
 
   return (
-    <div className="resume-container roboto-mono">
+    <div
+      style={style}
+      className={`resume-container ${fontClass ?? "roboto-mono"}`}
+    >
       {/* Header */}
       <header className="resume-header">
         <h1 className="resume-name">
@@ -40,7 +67,10 @@ const Resume: React.FC<{ resumeData: ResumeData }> = ({ resumeData }) => {
           <div key={index} className="work-item">
             <div className="item-header">
               <h3 className="job-title">
-                {job.position} at {job.company}, <p className="roboto-mono-italic wt200">{job.location}</p>
+                {job.position} at {job.company},{" "}
+                <p className={`${italicFontClass ?? "roboto-mono-italic"}`}>
+                  {job.location}
+                </p>
               </h3>
               <span className="job-date">
                 {job.startDate} – {job.endDate}
@@ -87,7 +117,11 @@ const Resume: React.FC<{ resumeData: ResumeData }> = ({ resumeData }) => {
             <span className="project-title-line">
               <h3> {project.name} </h3>
               <span className="rtSide">
-                <span className="roboto-mono-italic skills">
+                <span
+                  className={`${
+                    italicFontClass ?? "roboto-mono-italic"
+                  } skills`}
+                >
                   {project.keywords.map((kWord, ind) => (
                     <p key={ind}>{kWord}</p>
                   ))}
