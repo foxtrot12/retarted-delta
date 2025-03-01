@@ -1,123 +1,142 @@
 .resume-container {
+  --primaryColor: #212529;
+  --secondaryColor: #495057;
+  --tertiaryColor: #6c757d;
+  --bgColor: #f8f8f8;
+
   padding: 0 20px 20px 20px;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: var(--bgColor);
+  color: var(--primaryColor);
   font-size: 8px;
+
   a {
-    color: #333;
+    color: var(--secondaryColor);
   }
-}
 
-.resume-header {
-  text-align: center;
-  padding: 0 20px 0;
-  border-bottom: 2px solid #ccc;
-  margin-bottom: 20px;
-}
+  .resume-header {
+    text-align: center;
+    padding: 0 20px 0;
+    border-bottom: 2px solid var(--tertiaryColor);
+    margin-bottom: 20px;
+  }
 
-.resume-name {
-  margin: 0;
-  font-size: 32px; /* 42px → 21px */
-  display: inline-flex;
-  gap: 5px;
-  p {
+  .resume-name {
     margin: 0;
-  }
-}
-
-.resume-contact {
-  margin-top: 8px;
-  font-size: 8px; /* 12px → 6px */
-  color: #555;
-  a {
+    font-size: 32px;
+    /* 42px → 21px */
     display: inline-flex;
     gap: 5px;
-    justify-content: center;
-    align-items: center;
-  }
-}
+    color: var(--primaryColor);
 
-.resume-section {
-  margin-bottom: 30px;
-}
-
-.section-title {
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 8px;
-  font-size: 12px; /* 17.28px → 8.64px, rounded to 9px */
-  margin-bottom: 15px;
-}
-
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.job-title,
-.award-title,
-.education-institution,
-.project-title-line {
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 10px; /* 16px → 8px */
-  .rtSide {
-    font-size: 6px; /* 12px → 6px */
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    justify-items: center;
-    gap: 5px;
-    a {
-      text-align: right;
+    .textHollow {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--tertiaryColor);
+      color: transparent !important;
     }
-    .skills {
-      gap: 5px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .resume-contact {
+    margin-top: 8px;
+    font-size: 8px;
+    /* 12px → 6px */
+    color: var(--secondaryColor);
+
+    a {
       display: inline-flex;
-      p {
-        margin: 0;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      color: var(--secondaryColor);
+    }
+  }
+
+  .resume-section {
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    border-bottom: 2px solid var(--tertiaryColor);
+    padding-bottom: 8px;
+    font-size: 12px;
+    /* 17.28px → 8.64px, rounded to 9px */
+    margin-bottom: 15px;
+    color: var(--secondaryColor);
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .job-title,
+  .award-title,
+  .education-institution,
+  .project-title-line {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondaryColor);
+    font-size: 10px;
+
+    /* 16px → 8px */
+    .rtSide {
+      font-size: 6px;
+      /* 12px → 6px */
+      color: var(--secondaryColor);
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      justify-items: center;
+      gap: 5px;
+
+      a {
+        text-align: right;
+        color: var(--tertiaryColor);
+      }
+
+      .skills {
+        gap: 5px;
+        display: inline-flex;
+
+        p {
+          margin: 0;
+        }
       }
     }
   }
-}
 
-.job-date,
-.award-date,
-.education-date {
-  font-size: 6px; /* 12px → 6px */
-  color: #777;
-}
+  .job-date,
+  .award-date,
+  .education-date {
+    font-size: 6px;
+    /* 12px → 6px */
+    color: var(--secondaryColor);
+  }
 
-.job-details,
-.award-details,
-.education-details,
-.project-description {
-  margin-top: 8px;
-}
+  .job-details,
+  .award-details,
+  .education-details,
+  .project-description {
+    margin-top: 8px;
+  }
 
-.skills-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
+  .skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 
-// .skill-category {
-//   font-size: 5px; /* 9.12px → 4.56px, rounded to 5px */
-// }
+  a {
+    text-decoration: none;
+  }
 
-a {
-  color: #1a0dab;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.textHollow {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #000000;
-  color: transparent !important;
+  a:hover {
+    text-decoration: underline;
+  }
 }

@@ -28,6 +28,24 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: "AmazonEmber";
+  src: url("/fonts/AmazonEmber_Rg.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AmazonEmberItalic";
+  src: url("/fonts/Amazon-Ember-MediumItalic.ttf") format("truetype");
+}
+
+.amazon{
+  font-family: "AmazonEmber";
+}
+
+.amazonItalic{
+  font-family: "AmazonEmberItalic";
+}
+
 .roboto {
   font-family: "Roboto", sans-serif;
 }

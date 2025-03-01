@@ -14,7 +14,9 @@ function getQueryParams() {
     phone: params.get("phone"),
     email: params.get("email"),
     skills: params.get("skills"),
-    skillInd:params.get("sind")
+    skillInd:params.get("sind"),
+    company:params.get("company"),
+    accessibility:params.get("acc")
   };
 }
 
@@ -23,7 +25,8 @@ function getResumeData(
   phone: string | null,
   email: string | null,
   skills: string | null,
-  skillInd:string|null
+  skillInd:string|null,
+  accessibility:string|null
 ): ResumeData {
   const skillIndex = (skillInd && !Number.isNaN(Number(skillInd))) ? Number(skillInd) : 2
   let specData;
@@ -47,6 +50,10 @@ function getResumeData(
   cData.basics.email = email ?? cData.basics.email;
   cData.basics.phone = phone ? `+91 ${phone}` : cData.basics.phone;
 
+  if(!accessibility){
+    specData.projects = specData.projects.filter(el=>el.name!='A11y-Ninja')
+  }
+
   if (skills) {
     const skillsArr = skills?.split("_");
     specData.skills[skillIndex].keywords = [
@@ -60,23 +67,23 @@ function getResumeData(
 }
 
 function App() {
-  const { template, phone, email, skills,skillInd } = useMemo(
+  const { template, phone, email, skills,skillInd,company,accessibility } = useMemo(
     () => getQueryParams(),
     []
   );
 
   const resumeData = useMemo(
-    () => getResumeData(template ?? "std", phone, email, skills,skillInd),
+    () => getResumeData(template ?? "std", phone, email, skills,skillInd,accessibility),
     []
   );
 
   useEffect(() => {
-    window.print()
+    // window.print()
   }, []);
 
   return (
-    <main className="flex contentCtr retartedDelta roboto-mono">
-      <Resume resumeData={resumeData} />
+    <main className="flex contentCtr retartedDelta">
+      <Resume resumeData={resumeData} companyId={company ?? ''}/>
     </main>
   );
 }

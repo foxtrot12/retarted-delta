@@ -1,15 +1,38 @@
-import React, { memo } from "react";
+import React, { CSSProperties, memo, useMemo } from "react";
 import "./resume.scss";
 import { MdEmail } from "react-icons/md";
 import { FaMobileAlt, FaLink } from "react-icons/fa";
 import { ResumeData } from "./const/common";
+import { companies } from "./const/companies";
 
+const Resume: React.FC<{ resumeData: ResumeData; companyId: string }> = ({
+  resumeData,
+  companyId,
+}) => {
+  const { fontClass, italicFontClass, style } = useMemo(() => {
+    const customData = companies[companyId];
 
+    const style: CSSProperties & Record<string, string | undefined> = customData
+      ? {
+          "--primaryColor": customData?.primaryColor,
+          "--secondaryColor": customData?.secondaryColor,
+          "--tertiaryColor": customData?.tertiaryColor,
+          "--bgColor": customData?.bg,
+        }
+      : {};
 
-const Resume: React.FC<{ resumeData: ResumeData }> = ({ resumeData }) => {
+    return {
+      fontClass: customData?.fontClass ?? null,
+      italicFontClass: customData?.italicFontClass ?? null,
+      style: style,
+    };
+  }, [companyId]);
 
   return (
-    <div className="resume-container roboto-mono">
+    <div
+      style={style}
+      className={`resume-container ${fontClass ?? "roboto-mono"}`}
+    >
       {/* Header */}
       <header className="resume-header">
         <h1 className="resume-name">
@@ -40,7 +63,12 @@ const Resume: React.FC<{ resumeData: ResumeData }> = ({ resumeData }) => {
           <div key={index} className="work-item">
             <div className="item-header">
               <h3 className="job-title">
-                {job.position} at {job.company}, <p className="roboto-mono-italic wt200">{job.location}</p>
+                {job.position} at {job.company},{" "}
+                <p
+                  className={`${italicFontClass ?? "roboto-mono-italic"}`}
+                >
+                  {job.location}
+                </p>
               </h3>
               <span className="job-date">
                 {job.startDate} – {job.endDate}
@@ -87,7 +115,11 @@ const Resume: React.FC<{ resumeData: ResumeData }> = ({ resumeData }) => {
             <span className="project-title-line">
               <h3> {project.name} </h3>
               <span className="rtSide">
-                <span className="roboto-mono-italic skills">
+                <span
+                  className={`${
+                    italicFontClass ?? "roboto-mono-italic"
+                  } skills`}
+                >
                   {project.keywords.map((kWord, ind) => (
                     <p key={ind}>{kWord}</p>
                   ))}
