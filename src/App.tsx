@@ -16,7 +16,7 @@ function App() {
   } = useCustomization();
 
   useEffect(() => {
-    // window.print()
+    window.print()
   }, []);
 
   return (
