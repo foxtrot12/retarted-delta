@@ -3,30 +3,34 @@ import "./resume.scss";
 import { MdEmail } from "react-icons/md";
 import { FaMobileAlt, FaLink } from "react-icons/fa";
 import { ResumeData } from "./const/common";
-import { companies } from "./const/companies";
 
-const Resume: React.FC<{ resumeData: ResumeData; companyId: string }> = ({
+const Resume: React.FC<{
+  resumeData: ResumeData;
+  pColor: string | null;
+  sColor: string | null;
+  tColor: string | null;
+  bgColor: string | null;
+  fontClass: string | null;
+  italicFontClass: string | null;
+}> = ({
   resumeData,
-  companyId,
+  pColor,
+  sColor,
+  tColor,
+  bgColor,
+  fontClass,
+  italicFontClass,
 }) => {
-  const { fontClass, italicFontClass, style } = useMemo(() => {
-    const customData = companies[companyId];
+  const style = useMemo(() => {
+    const style: CSSProperties & Record<string, string | undefined> = {};
 
-    const style: CSSProperties & Record<string, string | undefined> = customData
-      ? {
-          "--primaryColor": customData?.primaryColor,
-          "--secondaryColor": customData?.secondaryColor,
-          "--tertiaryColor": customData?.tertiaryColor,
-          "--bgColor": customData?.bg,
-        }
-      : {};
+    pColor ? (style["--primaryColor"] = pColor) : null;
+    sColor ? (style["--secondaryColor"] = sColor) : null;
+    tColor ? (style["--tertiaryColor"] = tColor) : null;
+    bgColor ? (style["--bgColor"] = bgColor) : null;
 
-    return {
-      fontClass: customData?.fontClass ?? null,
-      italicFontClass: customData?.italicFontClass ?? null,
-      style: style,
-    };
-  }, [companyId]);
+    return style;
+  }, []);
 
   return (
     <div
@@ -64,9 +68,7 @@ const Resume: React.FC<{ resumeData: ResumeData; companyId: string }> = ({
             <div className="item-header">
               <h3 className="job-title">
                 {job.position} at {job.company},{" "}
-                <p
-                  className={`${italicFontClass ?? "roboto-mono-italic"}`}
-                >
+                <p className={`${italicFontClass ?? "roboto-mono-italic"}`}>
                   {job.location}
                 </p>
               </h3>

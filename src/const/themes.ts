@@ -1,4 +1,4 @@
-type CompanyTheme = {
+type ThemeT = {
     primaryColor?: string;
     secondaryColor?: string;
     tertiaryColor?: string;
@@ -7,11 +7,11 @@ type CompanyTheme = {
     italicFontClass?: string;
 };
 
-type Companies = {
-    [key: string]: CompanyTheme;
+type ThemesT = {
+    [key: string]: ThemeT;
 };
 
-export const companies : Companies ={
+export const Themes : ThemesT ={
     amazon:{
         primaryColor : '#000000',
         secondaryColor : '#232f3e',
@@ -24,9 +24,6 @@ export const companies : Companies ={
         primaryColor: '#0d1b2a',
         secondaryColor: '#1b263b',
         tertiaryColor:'#778da9',
-    },
-    google{
-        pr
     }
 
 }
