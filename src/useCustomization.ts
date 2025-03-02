@@ -12,8 +12,11 @@ function getResumeData(
   email: string | null,
   skills: string | null,
   skillInd: string | null,
-  accessibility: string | null
+  accessibility: string | null,
+  json: string | null
 ): ResumeData {
+  const customRData = json ? JSON.parse(json) : {};
+
   const skillIndex =
     skillInd && !Number.isNaN(Number(skillInd)) ? Number(skillInd) : 2;
   let specData;
@@ -52,7 +55,7 @@ function getResumeData(
   }
 
   // @ts-ignore
-  return { ...specData, ...cData };
+  return { ...specData, ...cData,...customRData };
 }
 
 function getQueryParams() {
@@ -66,6 +69,7 @@ function getQueryParams() {
     theme: params.get("theme"),
     accessibility: params.get("acc"),
     colors: params.get("colors"),
+    json: params.get("json"),
   };
 }
 
@@ -79,6 +83,7 @@ export function useCustomization() {
     skillInd,
     theme,
     accessibility,
+    json,
   } = useMemo(() => getQueryParams(), []);
 
   const resumeData = useMemo(
@@ -89,7 +94,8 @@ export function useCustomization() {
         email,
         skills,
         skillInd,
-        accessibility
+        accessibility,
+        json
       ),
     []
   );
