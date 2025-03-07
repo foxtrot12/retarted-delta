@@ -55,7 +55,7 @@ export const reactData = {
         "Mobile First Design"
       ],
       "name": "TC+",
-      "description": "Contributed to the AM team during the launch of a new assessments platform, TC Plus. Responsibilities included developing new assessments using Angular and enhancing frontend stability pre-launch. The platform is performing extremely well, with no major hiccups, bringing in significant revenue and continuously adding new assessments.",
+      "description": "Contributed to the AM team during the launch of a new assessments platform, TC Plus. Responsibilities included developing new assessments using Angular and enhancing frontend stability pre-launch. The platform is performing extremely well bringing in significant revenue and continuously adding new assessments.",
       "url": "https://www.shl.com/shldirect/en/practice-tests/"
     },
     {

@@ -13,7 +13,8 @@ function getResumeData(
   skills: string | null,
   skillInd: string | null,
   accessibility: string | null,
-  json: string | null
+  json: string | null,
+  singlePage : string|null
 ): ResumeData {
   const customRData = json ? JSON.parse(json) : {};
 
@@ -54,8 +55,15 @@ function getResumeData(
     ];
   }
 
+  const resumeData =  { ...specData, ...cData, ...customRData }
+
+  if(singlePage){
+    resumeData.work = resumeData.work.slice(0,2)
+    resumeData.projects = resumeData.projects.slice(0,4)
+  }
+
   // @ts-ignore
-  return { ...specData, ...cData,...customRData };
+  return resumeData;
 }
 
 function getQueryParams() {
@@ -70,6 +78,7 @@ function getQueryParams() {
     accessibility: params.get("acc"),
     colors: params.get("colors"),
     json: params.get("json"),
+    singlePage : params.get("spg")
   };
 }
 
@@ -84,6 +93,7 @@ export function useCustomization() {
     theme,
     accessibility,
     json,
+    singlePage
   } = useMemo(() => getQueryParams(), []);
 
   const resumeData = useMemo(
@@ -95,7 +105,8 @@ export function useCustomization() {
         skills,
         skillInd,
         accessibility,
-        json
+        json,
+        singlePage
       ),
     []
   );
