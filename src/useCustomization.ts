@@ -59,7 +59,7 @@ function getResumeData(
 
   if(singlePage){
     resumeData.work = resumeData.work.slice(0,2)
-    resumeData.projects = resumeData.projects.slice(0,4)
+    resumeData.projects = resumeData.projects.slice(0,5)
   }
 
   // @ts-ignore
