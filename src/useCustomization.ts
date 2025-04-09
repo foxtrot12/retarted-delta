@@ -11,15 +11,12 @@ function getResumeData(
   phone: string | null,
   email: string | null,
   skills: string | null,
-  skillInd: string | null,
   accessibility: string | null,
   json: string | null,
   singlePage : string|null
 ): ResumeData {
   const customRData = json ? JSON.parse(json) : {};
 
-  const skillIndex =
-    skillInd && !Number.isNaN(Number(skillInd)) ? Number(skillInd) : 2;
   let specData;
 
   switch (rType) {
@@ -48,11 +45,12 @@ function getResumeData(
   }
 
   if (skills) {
-    const skillsArr = skills?.split("_");
-    specData.skills[skillIndex].keywords = [
-      ...specData.skills[skillIndex].keywords,
-      ...skillsArr,
-    ];
+    const skillsArr = skills?.split(",");
+
+    skillsArr.forEach((el,i)=>{
+      specData.skills[i].keywords =[...specData.skills[i].keywords, ...el.split('_')]
+    })
+
   }
 
   const resumeData =  { ...specData, ...cData, ...customRData }
@@ -73,7 +71,6 @@ function getQueryParams() {
     phone: params.get("phone"),
     email: params.get("email"),
     skills: params.get("skills"),
-    skillInd: params.get("sind"),
     theme: params.get("theme"),
     accessibility: params.get("acc"),
     colors: params.get("colors"),
@@ -89,7 +86,6 @@ export function useCustomization() {
     phone,
     email,
     skills,
-    skillInd,
     theme,
     accessibility,
     json,
@@ -103,7 +99,6 @@ export function useCustomization() {
         phone,
         email,
         skills,
-        skillInd,
         accessibility,
         json,
         singlePage

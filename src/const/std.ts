@@ -41,137 +41,130 @@ export const stdData = {
       ]
     }
   ],
-  "projects": [
-    {
-      "keywords": [
-        "Angular",
-        "ReactJS",
-        "HTML",
-        "SCSS",
-        "Javascript",
-        "Reactive forms",
-        "Canvas API",
-        "Hooks API",
-        "Context API",
-        "Responsive UI",
-        "Mobile First Design"
-      ],
-      "name": "TC+",
-      "description": "Contributed to the AM team during the launch of a new assessments platform, TC Plus. Responsibilities included developing new assessments using Angular and enhancing frontend stability pre-launch. The platform is performing extremely well, bringing in significant revenue and continuously adding new assessments.",
-      "url": "https://www.shl.com/shldirect/en/practice-tests/"
-    },
-    {
-      "keywords": [
-        "Angular",
-        "HTML",
-        "Javascript",
-        "SCSS",
-        "Reactive forms"
-      ],
-      "name": "Avatar based Assessment",
-      "description": "Independently developed the frontend for an innovative avatar-based assessment under the guidance of the Director of AI and Project Manager. This media-rich assessment simulates a real-life interview experience and is currently in user trials, where it is performing exceptionally well."
-    },
-    {
-      "keywords": [
-        "Angular",
-        "HTML",
-        "SCSS",
-        "Javascript",
-        "Canvas API"
-      ],
-      "name": "Process Monitoring",
-      "description": "Collaborated in the development of a gamified assessment that emulates a process monitoring station, integrating advanced animations and extensive development in Canvas. This project, one of the company's top performers, has administered over 50,000 tests and significantly contributed to revenue growth.",
-      "url": "https://www.shl.com/shldirect/en/practice-tests/"
-    },
-    {
-      "keywords": [
-        "ReactJS",
-        "Typescript",
-        "Canvas API",
-        "Angular",
-        "Context API",
-        "Hooks API"
-      ],
-      "name": "SIA - AI Screener",
-      "description": "Actively contributed to the development of SHL's AI Screener. This project integrates generative AI for video creation with a chat-based AI to provide an automated interview experience, allowing for the efficient screening of numerous candidates."
-    },
-    {
-      "keywords": [
-        "ReactJS",
-        "Typescript",
-        "Angular",
-        "Single-SPA",
-        "RxJS",
-        "Hooks API"
-      ],
-      "name": "TC+ Microfrontend Transition",
-      "description": "Currently converting the monolithic TC+ project into a microfrontend-based architecture. This transition will make it easier to add new assessments and greatly improve the application's efficiency. The new architecture will enhance scalability and maintainability, ensuring a smoother development process and a better user experience."
-    },
-    {
-      "keywords": [
-        "WCAG",
-        "Angular",
-        "ReactJS",
-        "Reactive forms",
-        "Javascript",
-        "Canvas API",
-        "SCSS",
-        "Hooks API"
-      ],
-      "name": "TC+ Accessibility Initiative",
-      "description": "Actively contributed to making TC Plus assessments WCAG-compliant, including developing algorithms for keyboard navigation and features for interactive assessment accessibility, significantly improving user inclusivity."
-    },
-    {
-      "keywords": [
-        "ReactJS",
-        "Angular",
-        "Angular JS",
-        "Reactive forms",
-        "Javascript",
-        "SCSS",
-        "Hooks API",
-        "Context API"
-      ],
-      "name": "Migration Initiatives",
-      "description": "Core Functionalities: Led the initiative to migrate core functionalities from AngularJS to React and Angular. This effort was aimed at and resulted in a more stable, easier-to-maintain project with reduced vulnerabilities and better performance.  Individual Assessments: Currently guiding and mentoring junior team members in the migration of assessments from AngularJS to Angular and React."
-    },
-    {
-      "keywords": [
-        "React",
-        "Zustand",
-        "Typescript"
-      ],
-      "name": "Atom",
-      "description": "Contributed to the core team that developed an input handling library for SHL, providing form management functionality in React using hooks. This library significantly reduced development time across multiple teams"
-    },
-    {
-      "keywords": [
-        "Typescript",
-        "RxJS"
-      ],
-      "name": "RagaReactive",
-      "url": "https://www.npmjs.com/package/raga-reactive",
-      "description": "RagaReactive is a lightweight state management utility I designed to simplify state handling in web applications. It is built on top of RxJS, it offers a reactive approach to managing and subscribing to application state changes. "
-    },
-    {
-      "keywords": [
-        "Typescript",
-        "ReactJS",
-        "Angular",
-        "RxJS",
-        "WCAG"
-      ],
-      "name": "A11y-Ninja",
-      "description": "This library is a collection of TypeScript modules designed to enhance accessibility and user interaction within web applications. It includes utilities for focus management, selection behaviors, and keyboard navigation in tables, making it ideal for Angular and React-based applications.",
-      "url": "https://github.com/foxtrot12/A11y-Ninja"
-    }
-  ],
-  "awards": [
-    {
-      "date": "October 2022",
-      "awarder": "SHL India",
-      "summary": "Recognised for my work in developing Next Generation assessments (Avatar based assesment and Process Monitoring)",
-      "title": "Experienced Practitioner"
-    }
-  ],
+"projects": [
+  {
+    "keywords": [
+      "Angular",
+      "ReactJS",
+      "HTML",
+      "SCSS",
+      "Javascript",
+      "Reactive forms",
+      "Canvas API",
+      "Hooks API",
+      "Context API",
+      "Responsive UI",
+      "Mobile First Design"
+    ],
+    "name": "TC+",
+    "description": "Contributed to the launch of TC Plus, SHL's flagship assessments platform. Built and optimized 100+ assessments using Angular and ReactJS. Improved frontend stability, reduced load times, and integrated proctoring services. The platform now serves over 300 enterprise clients and generates significant revenue.",
+    "url": "https://www.shl.com/shldirect/en/practice-tests/"
+  },
+  {
+    "keywords": [
+      "Angular",
+      "HTML",
+      "Javascript",
+      "SCSS",
+      "Reactive forms"
+    ],
+    "name": "Avatar-based Assessment",
+    "description": "Independently developed the frontend for a media-rich, avatar-based assessment simulating real-life interviews. Created under the guidance of the Director of AI and Project Manager, currently in user trials with excellent engagement and usability feedback."
+  },
+  {
+    "keywords": [
+      "Angular",
+      "HTML",
+      "SCSS",
+      "Javascript",
+      "Canvas API"
+    ],
+    "name": "Process Monitoring",
+    "description": "Co-developed a gamified assessment simulating a process monitoring station. Built using Angular and Canvas API, the tool was optimized for low-end devices to maintain 45+ FPS. Now delivering over 5,000 assessments monthly and contributing to significant revenue growth.",
+    "url": "https://www.shl.com/shldirect/en/practice-tests/"
+  },
+  {
+    "keywords": [
+      "ReactJS",
+      "Typescript",
+      "Canvas API",
+      "Angular",
+      "Context API",
+      "Hooks API"
+    ],
+    "name": "SIA - AI Screener",
+    "description": "Contributed to SHL’s AI Screener with a focus on chat-based AI for automated candidate interviews. The system combines generative video and NLP-driven chat AI, currently used by 500+ candidates monthly during limited release."
+  },
+  {
+    "keywords": [
+      "ReactJS",
+      "Typescript",
+      "Angular",
+      "Single-SPA",
+      "RxJS",
+      "Hooks API"
+    ],
+    "name": "TC+ Microfrontend Transition",
+    "description": "Leading the architectural transformation of TC+ into a microfrontend structure using ReactJS, Angular, and Single-SPA. This shift has improved scalability, accelerated deployment cycles, and simplified assessment onboarding for multiple teams."
+  },
+  {
+    "keywords": [
+      "WCAG",
+      "Angular",
+      "ReactJS",
+      "Reactive forms",
+      "Javascript",
+      "Canvas API",
+      "SCSS",
+      "Hooks API"
+    ],
+    "name": "TC+ Accessibility Initiative",
+    "description": "Achieved AAA-level WCAG compliance across the TC+ platform by implementing keyboard navigation, screen reader support, and focus management features. Enhanced accessibility led to increased client adoption, especially across the EU where compliance is mandatory."
+  },
+  {
+    "keywords": [
+      "ReactJS",
+      "Angular",
+      "Angular JS",
+      "Reactive forms",
+      "Javascript",
+      "SCSS",
+      "Hooks API",
+      "Context API"
+    ],
+    "name": "Migration Initiatives",
+    "description": "Led the migration of legacy AngularJS code to Angular and React. Improved performance, maintainability, and reduced security vulnerabilities. Currently mentoring 5 junior developers through the migration of individual assessments."
+  },
+  {
+    "keywords": [
+      "React",
+      "Zustand",
+      "Typescript"
+    ],
+    "name": "Atom",
+    "description": "Core contributor to Atom, a React library offering input handling and form management using hooks. The library is now adopted by 12 squads across 4 teams, reducing form implementation time and standardizing user experience."
+  },
+  {
+    "keywords": [
+      "Typescript",
+      "RxJS"
+    ],
+    "name": "RagaReactive",
+    "url": "https://www.npmjs.com/package/raga-reactive",
+    "description": "Developed RagaReactive, a lightweight, RxJS-based state management utility for reactive applications. Simplifies state handling and subscriptions with a TypeScript-first API. Publicly available on NPM."
+  },
+  {
+    "keywords": [
+      "Typescript",
+      "ReactJS",
+      "Angular",
+      "RxJS",
+      "WCAG"
+    ],
+    "name": "A11y-Ninja",
+    "description": "Created A11y-Ninja, a TypeScript module suite for improving accessibility in React and Angular apps. Features include keyboard navigation for complex UIs, table interaction enhancements, and focus control utilities. Actively maintained as an open-source GitHub project.",
+    "url": "https://github.com/foxtrot12/A11y-Ninja"
+  }
+]
+
 }
