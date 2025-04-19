@@ -9,8 +9,7 @@ This document outlines the query parameters that can be used with the resume web
 | `temp`    | `string` | Specifies the resume template type. Possible values: `ng`, `react`, `std`. Default: `std`.                              |
 | `phone`   | `string` | The phone number to be displayed on the resume. Prefixed with `+91`.                                                    |
 | `email`   | `string` | The email address to be displayed on the resume.                                                                        |
-| `skills`  | `string` | A list of skills separated by underscores (`_`). These will be added to the resume skills section.                      |
-| `sind`    | `string` | Skill index to determine where new skills should be added. Defaults to `2`.                                             |
+| `skills`  | `string` | A list of skills separated by comma (`,`) for skill category and underscore (`_`) for individual skills. These will be added to the resume skills section.                      |
 | `theme`   | `string` | Defines the theme to be applied to the resume. Uses predefined themes if available.                                     |
 | `acc`     | `string` | If provided, accessibility-related projects will be included in the resume. Otherwise, `A11y-Ninja` project is removed. |
 | `colors`  | `string` | Defines custom colors for the resume in the format `primary_secondary_tertiary_background` as hex codes (without `#`).  |
@@ -21,7 +20,7 @@ This document outlines the query parameters that can be used with the resume web
 To generate a resume with specific customizations, you can use the following URL format:
 
 ```
-https://foxtrot12.github.io/retarted-delta/?theme=amazon&skills=Tailwind_jQuery_WebGL_PixiJS&temp=react
+https://foxtrot12.github.io/retarted-delta/?theme=amazon&skills=Python,Ionic_Next,Tailwind_jQuery_WebGL_PixiJS&temp=react
 
 ```
 
