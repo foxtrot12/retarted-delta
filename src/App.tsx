@@ -54,4 +54,4 @@ export interface ResumeParams {
   rType: RTypeT;
 }
 
-export type RTypeT = "react" | "ng" | "std";
+export type RTypeT = "react" | "ng" | "std" | "next";

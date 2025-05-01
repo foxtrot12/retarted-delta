@@ -4,6 +4,7 @@ import { ResumeData, commonData } from "./const/common";
 import { ngData } from "./const/ng";
 import { reactData } from "./const/react";
 import { stdData } from "./const/std";
+import { nextData } from "./const/next";
 import { Themes } from "./const/themes";
 
 function getResumeData(
@@ -29,6 +30,9 @@ function getResumeData(
     case "std":
       specData = stdData;
       break;
+    case "next":
+      specData = nextData
+      break
     default:
       specData = stdData;
       break;
