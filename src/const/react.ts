@@ -15,7 +15,8 @@ export const reactData = {
       "keywords": [
         "ReactJS",
         "Unity",
-        "Single-SPA"
+        "Single-SPA",
+        "CapacitorJS"
       ],
       "name": "Frameworks"
     },
@@ -149,18 +150,21 @@ export const reactData = {
     "url": "https://www.npmjs.com/package/raga-reactive",
     "description": "Created RagaReactive, an RxJS-based state management utility designed for reactive state updates in modern web apps. Available on NPM and built for simplicity and performance in TypeScript-based projects."
   },
-  {
-    "keywords": [
-      "Typescript",
-      "ReactJS",
-      "Angular",
-      "RxJS",
-      "WCAG"
-    ],
-    "name": "A11y-Ninja",
-    "description": "Designed A11y-Ninja, a TypeScript library that enhances accessibility in Angular and React apps. Features include advanced keyboard navigation, focus management, and selection behavior utilities. Especially useful for building inclusive UI components.",
-    "url": "https://github.com/foxtrot12/A11y-Ninja"
-  }
+{
+  "name": "TC+ Mobile",
+  "description": "Spearheading development of the TC+ mobile app as a replacement for the legacy SHL app. Purpose of this app is to deliver a performant, cross-platform experience at power with TC+ web platform.",
+  "keywords": [
+    "ReactJS",
+    "Typescript",
+    "TailwindCSS",
+    "CapacitorJS",
+    "Mobile First Design",
+    "Responsive UI",
+    "Hooks API",
+    "Context API"
+  ]
+}
+
 ]
 
 }
