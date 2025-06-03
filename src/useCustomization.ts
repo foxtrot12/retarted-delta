@@ -6,6 +6,7 @@ import { reactData } from "./const/react";
 import { stdData } from "./const/std";
 import { nextData } from "./const/next";
 import { Themes } from "./const/themes";
+import { mernData } from "./const/mern";
 
 function getResumeData(
   rType: RTypeT,
@@ -14,7 +15,7 @@ function getResumeData(
   skills: string | null,
   accessibility: string | null,
   json: string | null,
-  singlePage : string|null
+  singlePage: string | null
 ): ResumeData {
   const customRData = json ? JSON.parse(json) : {};
 
@@ -32,6 +33,9 @@ function getResumeData(
       break;
     case "next":
       specData = nextData
+      break
+    case "mern":
+      specData = mernData
       break
     default:
       specData = stdData;
@@ -51,17 +55,17 @@ function getResumeData(
   if (skills) {
     const skillsArr = skills?.split(",");
 
-    skillsArr.forEach((el,i)=>{
-      specData.skills[i].keywords =[...specData.skills[i].keywords, ...el.split('_')]
+    skillsArr.forEach((el, i) => {
+      specData.skills[i].keywords = [...specData.skills[i].keywords, ...el.split('_')]
     })
 
   }
 
-  const resumeData =  { ...specData, ...cData, ...customRData }
+  const resumeData = { ...specData, ...cData, ...customRData }
 
-  if(singlePage){
-    resumeData.work = resumeData.work.slice(0,2)
-    resumeData.projects = resumeData.projects.slice(0,5)
+  if (singlePage) {
+    resumeData.work = resumeData.work.slice(0, 2)
+    resumeData.projects = resumeData.projects.slice(0, 5)
   }
 
   // @ts-ignore
@@ -79,7 +83,7 @@ function getQueryParams() {
     accessibility: params.get("acc"),
     colors: params.get("colors"),
     json: params.get("json"),
-    singlePage : params.get("spg")
+    singlePage: params.get("spg")
   };
 }
 
