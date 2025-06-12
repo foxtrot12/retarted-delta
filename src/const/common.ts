@@ -9,7 +9,7 @@ export const commonData = {
   basics: {
     name: ["Chinmaya", "Sharma"],
     email: "s.chinmaya@myyahoo.com",
-    website: "https://chini.vercel.app/",
+    website: "https://www.chinmaya.pw/",
     phone: "+91 8076969130",
   },
   education: [
