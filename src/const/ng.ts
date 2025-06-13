@@ -5,9 +5,7 @@ export const ngData = {
       "level": "",
       "keywords": [
         "Typescript",
-        "JavaScript(ES6)",
-        "HTML5/CSS3",
-        "SASS"
+        "JavaScript(ES6)"
       ],
       "name": "Programming Languages"
     },
@@ -23,13 +21,13 @@ export const ngData = {
     },
     {
       "keywords": [
+        "HTML5/CSS3",
+        "SASS",
         "Reactive forms",
         "RxJS",
         "Canvas API",
         "WCAG",
         "Git",
-        "Bitbucket",
-        "CI/CD"
       ],
       "name": "Others"
     },
@@ -40,7 +38,9 @@ export const ngData = {
         "Mobile First Design",
         "Responsive UI",
         "Material Design",
-        "Restful API"
+        "Restful API",
+        "Bitbucket",
+        "CI/CD"
       ]
     }
   ],

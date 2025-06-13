@@ -5,8 +5,6 @@ export const stdData = {
       "level": "",
       "keywords": [
         "JavaScript",
-        "HTML/CSS",
-        "SCSS",
         "Typescript"
       ],
       "name": "Programming Languages"
@@ -23,14 +21,14 @@ export const stdData = {
     },
     {
       "keywords": [
+        "HTML/CSS",
+        "SCSS",
         "Reactive forms",
         "RxJS",
         "Canvas API",
         "WCAG",
         "Git",
-        "Bitbucket",
-        "Jira",
-        "Functional Programming"
+        "Bitbucket"
       ],
       "name": "Others"
     },
@@ -38,7 +36,9 @@ export const stdData = {
       "keywords": [
         "Hooks API",
         "Mobile First Design",
-        "Responsive UI"
+        "Responsive UI",
+        "Jira",
+        "Functional Programming"
       ]
     }
   ],

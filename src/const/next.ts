@@ -5,8 +5,6 @@ export const nextData = {
       "level": "",
       "keywords": [
         "JavaScript",
-        "HTML/CSS",
-        "SCSS",
         "Typescript"
       ],
       "name": "Programming Languages"
@@ -23,13 +21,13 @@ export const nextData = {
     },
     {
       "keywords": [
+        "HTML/CSS",
+        "SCSS",
         "RxJS",
         "Canvas API",
         "WCAG",
         "Git",
-        "Bitbucket",
-        "Jira",
-        "Functional Programming"
+        "Bitbucket"
       ],
       "name": "Others"
     },
@@ -40,7 +38,9 @@ export const nextData = {
         "Context API",
         "App Router",
         "Mobile First Design",
-        "Responsive UI"
+        "Responsive UI",
+        "Jira",
+        "Functional Programming"
       ]
     }
   ],

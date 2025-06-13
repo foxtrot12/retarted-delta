@@ -4,8 +4,6 @@ export const mernData = {
       "level": "",
       "keywords": [
         "JavaScript",
-        "HTML/CSS",
-        "SCSS",
         "Typescript"
       ],
       "name": "Programming Languages"
@@ -24,13 +22,13 @@ export const mernData = {
     },
     {
       "keywords": [
+        "HTML/CSS",
+        "SCSS",
         "RxJS",
         "Canvas API",
         "WCAG",
         "Git",
-        "Bitbucket",
-        "Jira",
-        "Functional Programming"
+        "Bitbucket"
       ],
       "name": "Others"
     },
@@ -40,7 +38,10 @@ export const mernData = {
         "Hooks API",
         "Context API",
         "Mobile First Design",
-        "Responsive UI"
+        "Responsive UI",
+        "Jira",
+        "Functional Programming"
+        
       ]
     }
   ],
