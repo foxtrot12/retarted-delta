@@ -15,7 +15,8 @@ function getResumeData(
   skills: string | null,
   accessibility: string | null,
   json: string | null,
-  singlePage: string | null
+  singlePage: string | null,
+  mobile:string  | null
 ): ResumeData {
   const customRData = json ? JSON.parse(json) : {};
 
@@ -52,6 +53,12 @@ function getResumeData(
     );
   }
 
+  if (!mobile){
+        specData.projects = specData.projects.filter(
+      (el) => el.name != "TC+ Mobile"
+    );
+  }
+
   if (skills) {
     const skillsArr = skills?.split(",");
 
@@ -83,7 +90,8 @@ function getQueryParams() {
     accessibility: params.get("acc"),
     colors: params.get("colors"),
     json: params.get("json"),
-    singlePage: params.get("spg")
+    singlePage: params.get("spg"),
+    mobile:params.get("mob")
   };
 }
 
@@ -97,7 +105,8 @@ export function useCustomization() {
     theme,
     accessibility,
     json,
-    singlePage
+    singlePage,
+    mobile
   } = useMemo(() => getQueryParams(), []);
 
   const resumeData = useMemo(
@@ -109,7 +118,8 @@ export function useCustomization() {
         skills,
         accessibility,
         json,
-        singlePage
+        singlePage,
+        mobile
       ),
     []
   );
