@@ -16,7 +16,8 @@ function getResumeData(
   accessibility: string | null,
   json: string | null,
   singlePage: string | null,
-  mobile:string  | null
+  mobile:string  | null,
+  summary:string | null
 ): ResumeData {
   const customRData = json ? JSON.parse(json) : {};
 
@@ -46,6 +47,10 @@ function getResumeData(
   const cData = { ...commonData };
   cData.basics.email = email ?? cData.basics.email;
   cData.basics.phone = phone ? `+91 ${phone}` : cData.basics.phone;
+
+  if(!summary){
+    cData.summary = ""
+  }
 
   if (!accessibility) {
     specData.projects = specData.projects.filter(
@@ -91,7 +96,8 @@ function getQueryParams() {
     colors: params.get("colors"),
     json: params.get("json"),
     singlePage: params.get("spg"),
-    mobile:params.get("mob")
+    mobile:params.get("mob"),
+    summary:params.get("sum")
   };
 }
 
@@ -106,7 +112,8 @@ export function useCustomization() {
     accessibility,
     json,
     singlePage,
-    mobile
+    mobile,
+    summary
   } = useMemo(() => getQueryParams(), []);
 
   const resumeData = useMemo(
@@ -119,7 +126,8 @@ export function useCustomization() {
         accessibility,
         json,
         singlePage,
-        mobile
+        mobile,
+        summary
       ),
     []
   );
