@@ -17,7 +17,7 @@ export const nextData = {
         "Single-SPA",
         "CapacitorJS"
       ],
-      "name": "Frameworks"
+      "name": "JS Frameworks and Libraries"
     },
     {
       "keywords": [
