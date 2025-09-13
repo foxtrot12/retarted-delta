@@ -38,7 +38,6 @@ export const reactData = {
         "Mobile First Design",
         "Responsive UI",
         "Jira",
-        "Functional Programming"
       ]
     }
   ],
