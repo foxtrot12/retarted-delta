@@ -10,9 +10,9 @@ export const commonData = {
   summary:"I am a skilled Software Engineer with over three years of experience specializing in front-end development using Angular, ReactJS, JavaScript, TypeScript, and tools like RxJS, Canvas API, and WCAG for accessibility. I have led multiple projects, including launching the TC+ assessments platform (serving 300+ clients), the AI Screener (used by 500+ candidates monthly), and gamified tools like Process Monitoring and Avatar-based Assessments. My achievements include migrating legacy applications, ensuring AAA WCAG compliance across 11 products, developing reusable libraries like ATOM, and mentoring fellow developers. I hold a B.Tech in Computer Science from Amity School of Engineering (GPA 7.31) and received the Experienced Practitioner award in 2022. My internships at Marksman Technologies and Nethuts helped me refine my web development skills.",
   basics: {
     name: ["Chinmaya", "Sharma"],
-    email: "s.chinmaya@myyahoo.com",
-    website: "https://www.chinmaya.pw/",
-    phone: "+91 8076969130",
+    email: "",
+    website: "https://chini.vercel.app/",
+    phone: "",
   },
   education: [
     {
@@ -26,9 +26,22 @@ export const commonData = {
     },
   ],
 "work": [
-  {
+    {
     "website": "",
     "endDate": "Present",
+    "highlights": [
+     "Contribute to Prudent’s latest platform serving thousands of clients domestically and internationally",
+     "Guide junior developers through technical issues",
+     "Provide technical input to design and product teams for viability of new features"
+    ],
+    "company": "SHL India",
+    "position": "Software Engineer",
+    "location": "Gurgaon",
+    "startDate": "October 2025"
+  },
+  {
+    "website": "",
+    "endDate": " September 2025",
     "highlights": [
       "Contributed to the development of SHL's AI Screener (SIA), currently in limited release and used by ~500 candidates monthly.",
       "Assumed increased leadership responsibilities as a Software Engineer, mentoring 4 developers and driving improvements across multiple projects.",
@@ -156,5 +169,5 @@ export interface ResumeData {
   projects: ProjectEntry[];
   awards: AwardEntry[];
   sections: string[];
-  summary:string
+  summary:string;
 }

@@ -16,8 +16,9 @@ function getResumeData(
   accessibility: string | null,
   json: string | null,
   singlePage: string | null,
-  mobile:string  | null,
-  summary:string | null
+  mobile: string | null,
+  summary: string | null,
+  comType: string | null
 ): ResumeData {
   const customRData = json ? JSON.parse(json) : {};
 
@@ -45,10 +46,23 @@ function getResumeData(
   }
 
   const cData = { ...commonData };
+
+  switch (comType) {
+    case '1':
+      cData.basics.phone = '+91 8076969130'
+      cData.basics.email = 's.chinmaya@myyahoo.com'
+      break;
+
+    default:
+      cData.basics.phone = '+91 9873526069'
+      cData.basics.email = 'chinmayasharma@myyahoo.com'
+      break;
+  }
+
   cData.basics.email = email ?? cData.basics.email;
   cData.basics.phone = phone ? `+91 ${phone}` : cData.basics.phone;
 
-  if(!summary){
+  if (!summary) {
     cData.summary = ""
   }
 
@@ -58,8 +72,8 @@ function getResumeData(
     );
   }
 
-  if (!mobile){
-        specData.projects = specData.projects.filter(
+  if (!mobile) {
+    specData.projects = specData.projects.filter(
       (el) => el.name != "TC+ Mobile"
     );
   }
@@ -96,8 +110,9 @@ function getQueryParams() {
     colors: params.get("colors"),
     json: params.get("json"),
     singlePage: params.get("spg"),
-    mobile:params.get("mob"),
-    summary:params.get("sum")
+    mobile: params.get("mob"),
+    summary: params.get("sum"),
+    comType: params.get("comtype")
   };
 }
 
@@ -113,7 +128,8 @@ export function useCustomization() {
     json,
     singlePage,
     mobile,
-    summary
+    summary,
+    comType
   } = useMemo(() => getQueryParams(), []);
 
   const resumeData = useMemo(
@@ -127,7 +143,8 @@ export function useCustomization() {
         json,
         singlePage,
         mobile,
-        summary
+        summary,
+        comType
       ),
     []
   );
