@@ -30,12 +30,12 @@ export const commonData = {
     "website": "",
     "endDate": "Present",
     "highlights": [
-     "Contribute to Prudent’s latest platform serving thousands of clients domestically and internationally",
+     "Contribute to Prudent's latest platform serving thousands of clients domestically and internationally",
      "Guide junior developers through technical issues",
      "Provide technical input to design and product teams for viability of new features"
     ],
-    "company": "SHL India",
-    "position": "Software Engineer",
+    "company": "Prudent Insurance Brokers Ltd",
+    "position": "Software Engineer 2",
     "location": "Gurgaon",
     "startDate": "October 2025"
   },
