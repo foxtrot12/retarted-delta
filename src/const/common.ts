@@ -71,8 +71,6 @@ export const commonData = {
   },
   {
     "highlights": [
-      "Built responsive landing pages and dashboards using HTML, CSS, JavaScript, and Bootstrap, improving page load speed by 30%.",
-      "Integrated REST APIs and assisted in debugging user-facing issues across 3 projects."
     ],
     "company": "Marksman Technologies",
     "position": "Web Development Intern",
@@ -82,8 +80,6 @@ export const commonData = {
   },
   {
     "highlights": [
-      "Designed and developed 4 front-end components for client projects using HTML, CSS, and jQuery.",
-      "Assisted in testing and deploying WordPress-based sites, accelerating project delivery by 20%."
     ],
     "company": "Nethuts",
     "position": "Web Development Intern",
