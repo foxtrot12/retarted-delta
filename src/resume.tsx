@@ -30,110 +30,126 @@ const Resume: React.FC<{
       bgColor ? (style["--bgColor"] = bgColor) : null;
 
       return style;
-    }, []);
+    }, [pColor, sColor, tColor, bgColor]);
 
     return (
       <div
         style={style}
-        className={`resume-container ${fontClass ?? "roboto-mono"}`}
+        className={`resume-container ${fontClass ?? "latex-serif"}`}
       >
         {/* Header */}
         <header className="resume-header">
           <h1 className="resume-name">
-            <p>{resumeData.basics.name[0]}</p>
-            <p className="textHollow">{resumeData.basics.name[1]}</p>
+            <span>{resumeData.basics.name[0]}</span>
+            <span className="lastName">{resumeData.basics.name[1]}</span>
           </h1>
           <div className="resume-contact">
-            <a href={`mailto:${resumeData.basics.email}`}>
-              <MdEmail /> {resumeData.basics.email}
-            </a>{" "}
-            | <FaMobileAlt /> {resumeData.basics.phone} |{" "}
-            <a
-              href={resumeData.basics.website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLink /> {resumeData.basics.website}
-            </a>
+            {resumeData.basics.email && (
+              <a href={`mailto:${resumeData.basics.email}`}>
+                <MdEmail /> {resumeData.basics.email}
+              </a>
+            )}
+            {resumeData.basics.phone && (
+              <span>
+                <FaMobileAlt /> {resumeData.basics.phone}
+              </span>
+            )}
+            {resumeData.basics.website && (
+              <a
+                href={resumeData.basics.website}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLink /> {resumeData.basics.website}
+              </a>
+            )}
           </div>
         </header>
 
-        {/*Summary */}
-        {resumeData.summary && <section className="resume-section">
-          <h2 className="section-title">
-            {resumeData.headings.summary || "Work Experience"}
-          </h2>
-          <p>
-            {resumeData.summary}
-          </p>
-        </section>}
+        {/* Summary */}
+        {resumeData.summary && (
+          <section className="resume-section" id="summary">
+            <h2 className="section-title">
+              {resumeData.headings.summary || "Summary"}
+            </h2>
+            <p className="summary-text">
+              {resumeData.summary}
+            </p>
+          </section>
+        )}
 
         {/* Work Experience */}
-        <section className="resume-section" id="work">
-          <h2 className="section-title">
-            {resumeData.headings.work || "Work Experience"}
-          </h2>
-          {resumeData.work.map((job, index) => (
-            <div key={index} className="work-item">
-              <div className="item-header">
-                <h3 className="job-title">
-                  {job.position} at {job.company},{" "}
-                  <p className={`${italicFontClass ?? "roboto-mono-italic"} wt400`}>
-                    {job.location}
-                  </p>
-                </h3>
-                <span className="job-date">
-                  {job.startDate} – {job.endDate}
-                </span>
-              </div>
-              <div className="job-details">
-                {job.highlights &&
-                  job.highlights.filter((h) => h.trim() !== "").length > 0 && (
-                    <ul>
-                      {job.highlights
-                        .filter((h) => h.trim() !== "")
-                        .map((hl, idx) => (
-                          <li key={idx}>{hl}</li>
-                        ))}
-                    </ul>
-                  )}
-              </div>
-            </div>
-          ))}
-        </section>
-
-        {/* Skills */}
-        <section className="resume-section" id="skills">
-          <h2 className="section-title">
-            {resumeData.headings.skills || "Skills"}
-          </h2>
-          <div className="skills-list">
-            {resumeData.skills.map((skill, index) => (
-              <div key={index} className="skill-category">
-                {skill.name && <strong>{skill.name}: </strong>}
-                <span>{skill.keywords.join(", ")}</span>
+        {resumeData.work && resumeData.work.length > 0 && (
+          <section className="resume-section" id="work">
+            <h2 className="section-title">
+              {resumeData.headings.work || "Work Experience"}
+            </h2>
+            {resumeData.work.map((job, index) => (
+              <div key={index} className="work-item">
+                <div className="item-header">
+                  <span className="item-title">
+                    <strong>{job.position}</strong> | <span className="company-name">{job.company}</span>
+                    {job.location && (
+                      <span className="location-name">, {job.location}</span>
+                    )}
+                  </span>
+                  <span className="job-date">
+                    {job.startDate} – {job.endDate}
+                  </span>
+                </div>
+                <div className="job-details">
+                  {job.highlights &&
+                    job.highlights.filter((h) => h.trim() !== "").length > 0 && (
+                      <ul>
+                        {job.highlights
+                          .filter((h) => h.trim() !== "")
+                          .map((hl, idx) => (
+                            <li key={idx}>{hl}</li>
+                          ))}
+                      </ul>
+                    )}
+                </div>
               </div>
             ))}
-          </div>
-        </section>
+          </section>
+        )}
+
+        {/* Skills */}
+        {resumeData.skills && resumeData.skills.length > 0 && (
+          <section className="resume-section" id="skills">
+            <h2 className="section-title">
+              {resumeData.headings.skills || "Skills"}
+            </h2>
+            <div className="skills-list">
+              {resumeData.skills.map((skill, index) => (
+                <div key={index} className="skill-category">
+                  {skill.name && <strong>{skill.name}: </strong>}
+                  <span>{skill.keywords.join(", ")}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Projects */}
-        <section className="resume-section" id="projects">
-          <h2 className="section-title">
-            {resumeData.headings.projects || "Projects"}
-          </h2>
-          {resumeData.projects.map((project, index) => (
-            <div key={index} className="project-item">
-              <span className="project-title-line">
-                <h3> {project.name} </h3>
-                <span className="rtSide">
-                  <span
-                    className={`${italicFontClass ?? "roboto-mono-italic"
-                      } skills wt400`}
-                  >
-                    {project.keywords.map((kWord, ind) => (
-                      <p key={ind}>{kWord}</p>
-                    ))}
+        {resumeData.projects && resumeData.projects.length > 0 && (
+          <section className="resume-section" id="projects">
+            <h2 className="section-title">
+              {resumeData.headings.projects || "Projects"}
+            </h2>
+            {resumeData.projects.map((project, index) => (
+              <div key={index} className="project-item">
+                <div className="item-header">
+                  <span className="item-title">
+                    <strong>{project.name}</strong>
+                    {project.keywords && project.keywords.length > 0 && (
+                      <span className="project-keywords">
+                        {" | "}
+                        <span className={italicFontClass ?? "latex-serif-italic"}>
+                          {project.keywords.join(", ")}
+                        </span>
+                      </span>
+                    )}
                   </span>
                   {project.url && (
                     <a
@@ -145,57 +161,69 @@ const Resume: React.FC<{
                       <FaLink /> View Project
                     </a>
                   )}
-                </span>
-              </span>
-              <p className="project-description">{project.description}</p>
-            </div>
-          ))}
-        </section>
+                </div>
+                <p className="project-description">{project.description}</p>
+              </div>
+            ))}
+          </section>
+        )}
 
         {/* Awards */}
-        <section className="resume-section" id="awards">
-          <h2 className="section-title">
-            {resumeData.headings.awards || "Awards"}
-          </h2>
-          {resumeData.awards.map((award, index) => (
-            <div key={index} className="award-item">
-              <div className="item-header">
-                <h3 className="award-title">{award.title}</h3>
-                <span className="award-date">{award.date}</span>
+        {resumeData.awards && resumeData.awards.length > 0 && (
+          <section className="resume-section" id="awards">
+            <h2 className="section-title">
+              {resumeData.headings.awards || "Awards"}
+            </h2>
+            {resumeData.awards.map((award, index) => (
+              <div key={index} className="award-item">
+                <div className="item-header">
+                  <span className="award-title">
+                    <strong>{award.title}</strong>
+                    {award.awarder && ` – ${award.awarder}`}
+                  </span>
+                  <span className="award-date">{award.date}</span>
+                </div>
+                {award.summary && (
+                  <div className="award-details">
+                    <p>{award.summary}</p>
+                  </div>
+                )}
               </div>
-              <div className="award-details">
-                {award.awarder && <p>Awarded by: {award.awarder}</p>}
-                {award.summary && <p>{award.summary}</p>}
-              </div>
-            </div>
-          ))}
-        </section>
+            ))}
+          </section>
+        )}
 
         {/* Education */}
-        <section className="resume-section" id="education">
-          <h2 className="section-title">
-            {resumeData.headings.education || "Education"}
-          </h2>
-          {resumeData.education.map((edu, index) => (
-            <div key={index} className="education-item">
-              <div className="item-header">
-                <h3 className="education-institution">{edu.institution}</h3>
-                <span className="education-date">
-                  {edu.startDate} – {edu.endDate}
-                </span>
-              </div>
-              <div className="education-details">
-                {edu.studyType && edu.area && (
-                  <p>
+        {resumeData.education && resumeData.education.length > 0 && (
+          <section className="resume-section" id="education">
+            <h2 className="section-title">
+              {resumeData.headings.education || "Education"}
+            </h2>
+            {resumeData.education.map((edu, index) => (
+              <div key={index} className="education-item">
+                <div className="item-header">
+                  <span className="education-title">
+                    <strong>{edu.institution}</strong>
+                    {edu.location && `, ${edu.location}`}
+                  </span>
+                  <span className="education-date">
+                    {edu.startDate} – {edu.endDate}
+                  </span>
+                </div>
+                <div className="item-subheader">
+                  <span className="education-degree">
                     {edu.studyType} in {edu.area}
-                  </p>
-                )}
-                {edu.location && <p>Location: {edu.location}</p>}
-                {edu.gpa && <p>GPA: {edu.gpa}</p>}
+                  </span>
+                  {edu.gpa && (
+                    <span className="education-gpa">
+                      GPA: {edu.gpa}
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </section>
+            ))}
+          </section>
+        )}
       </div>
     );
   };

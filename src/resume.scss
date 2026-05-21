@@ -1,144 +1,264 @@
 .resume-container {
-  --primaryColor: #212529;
-  --secondaryColor: #495057;
-  --tertiaryColor: #6c757d;
-  --bgColor: #f8f8f8;
-  line-height: 10px;
+  // Theme default overrides (fallback if not provided by useCustomization hook/params)
+  --primaryColor: #000000;
+  --secondaryColor: #2b2b2b;
+  --tertiaryColor: #555555;
+  --bgColor: #ffffff;
 
-  padding: 0 20px 20px 20px;
+  width: 8.5in;
+  min-height: 11in;
   background-color: var(--bgColor);
   color: var(--primaryColor);
-  font-size: 8px;
+  padding: 0.5in 0.5in;
+  box-sizing: border-box;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   a {
     color: var(--secondaryColor);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
+  // Header styles
   .resume-header {
     text-align: center;
-    padding: 0 20px 0;
-    border-bottom: 2px solid var(--tertiaryColor);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--tertiaryColor);
   }
 
   .resume-name {
-    margin: 0;
-    font-size: 32px;
-    /* 42px → 21px */
+    margin: 0 0 6px 0;
+    font-size: 22pt;
+    font-weight: 700;
     display: inline-flex;
-    gap: 5px;
+    justify-content: center;
+    gap: 8px;
+    letter-spacing: -0.5px;
     color: var(--primaryColor);
 
-    .textHollow {
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var(--tertiaryColor);
-      color: transparent !important;
+    span {
+      margin: 0;
     }
 
-    p {
-      margin: 0;
+    .lastName {
+      color: var(--primaryColor);
     }
   }
 
   .resume-contact {
-    margin-top: 8px;
-    font-size: 8px;
-    /* 12px → 6px */
+    margin-top: 4px;
+    font-size: 9.5pt;
     color: var(--secondaryColor);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 
-    a {
+    a, span {
       display: inline-flex;
-      gap: 5px;
-      justify-content: center;
       align-items: center;
+      gap: 4px;
       color: var(--secondaryColor);
     }
   }
 
+  // Section layout
   .resume-section {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .section-title {
-    border-bottom: 2px solid var(--tertiaryColor);
-    padding-bottom: 8px;
-    font-size: 12px;
-    /* 17.28px → 8.64px, rounded to 9px */
-    margin-bottom: 15px;
-    color: var(--secondaryColor);
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+    padding-bottom: 2px;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  // Experience, Projects, Education, Awards
+  .work-item, .project-item, .award-item, .education-item {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .item-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-  }
+    font-size: 10pt;
+    color: var(--primaryColor);
+    margin-bottom: 2px;
 
-  .job-title,
-  .award-title,
-  .education-institution,
-  .project-title-line {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--secondaryColor);
-    font-size: 10px;
-    gap: 5px;
+    .item-title {
+      font-size: 10pt;
+      color: var(--primaryColor);
+    }
 
-    /* 16px → 8px */
-    .rtSide {
-      font-size: 6px;
-      /* 12px → 6px */
+    .company-name {
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .location-name {
+      font-weight: 400;
+      color: var(--tertiaryColor);
+    }
+
+    .job-date, .award-date, .education-date {
+      font-size: 9.5pt;
+      font-weight: 500;
       color: var(--secondaryColor);
-      display: flex;
-      flex-direction: column;
-      align-content: space-between;
-      justify-items: center;
-      gap: 5px;
+      white-space: nowrap;
+    }
 
-      a {
-        text-align: right;
-        color: var(--tertiaryColor);
-      }
+    .project-link {
+      font-size: 9.5pt;
+      font-weight: 400;
+      color: var(--tertiaryColor);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
 
-      .skills {
-        gap: 5px;
-        display: inline-flex;
+    .project-keywords {
+      font-weight: 400;
+      color: var(--tertiaryColor);
+    }
 
-        p {
-          margin: 0;
-        }
-      }
+    .award-title {
+      font-size: 10pt;
     }
   }
 
-  .job-date,
-  .award-date,
-  .education-date {
-    font-size: 6px;
-    /* 12px → 6px */
+  .item-subheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 9.5pt;
     color: var(--secondaryColor);
+    margin-top: 1px;
+    margin-bottom: 2px;
+
+    .education-degree {
+      font-style: italic;
+    }
+
+    .education-gpa {
+      font-weight: 500;
+    }
   }
 
-  .job-details,
-  .award-details,
-  .education-details,
+  // Details & bullet lists
+  .job-details, .award-details, .education-details {
+    margin-top: 3px;
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      list-style-type: disc;
+
+      li {
+        margin-bottom: 2px;
+        color: var(--secondaryColor);
+        font-size: 9.5pt;
+        line-height: 1.35;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    p {
+      margin: 0;
+      color: var(--secondaryColor);
+      font-size: 9.5pt;
+      line-height: 1.35;
+    }
+  }
+
+  .summary-text {
+    margin: 0;
+    color: var(--secondaryColor);
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+
   .project-description {
-    margin-top: 8px;
+    margin: 3px 0 0 0;
+    color: var(--secondaryColor);
+    font-size: 9.5pt;
+    line-height: 1.35;
   }
 
+  // Skills list (single-column key-value rows)
   .skills-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 9.5pt;
+
+    .skill-category {
+      color: var(--secondaryColor);
+      line-height: 1.35;
+
+      strong {
+        color: var(--primaryColor);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Global page wrapper styling
+.retartedDelta {
+  padding: 20px;
+  background-color: #f1f3f5;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  a {
-    text-decoration: none;
+  .retartedDelta {
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    min-height: auto !important;
   }
 
-  a:hover {
-    text-decoration: underline;
+  .resume-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    padding: 0 !important; /* Managed by @page margin */
+    box-shadow: none !important;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.5in;
   }
 }
