@@ -55,7 +55,7 @@ function getResumeData(
 
     default:
       cData.basics.phone = '+91 9873526069'
-      cData.basics.email = 'chinmayasharma@myyahoo.com'
+      cData.basics.email = 'chinmayasharma@aol.com'
       break;
   }
 
