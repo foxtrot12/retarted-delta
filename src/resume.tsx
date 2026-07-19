@@ -88,7 +88,7 @@ const Resume: React.FC<{
               <div key={index} className="work-item">
                 <div className="item-header">
                   <span className="item-title">
-                    <strong>{job.position}</strong> | <span className="company-name">{job.company}</span>
+                    <strong>{job.position}</strong> | <a href={job.website} target="_blank" rel="noopener noreferrer" className="company-name">{job.company}</a>
                     {job.location && (
                       <span className="location-name">, {job.location}</span>
                     )}
@@ -104,7 +104,7 @@ const Resume: React.FC<{
                         {job.highlights
                           .filter((h) => h.trim() !== "")
                           .map((hl, idx) => (
-                            <li key={idx}>{hl}</li>
+                            <li key={idx} dangerouslySetInnerHTML={{ __html: hl }} />
                           ))}
                       </ul>
                     )}

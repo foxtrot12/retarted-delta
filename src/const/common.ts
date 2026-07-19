@@ -5,9 +5,9 @@ export const commonData = {
     education: "Education",
     skills: "Skills",
     projects: "Projects",
-    summary:"Summary"
+    summary: "Summary"
   },
-  summary:"I am a skilled Software Engineer with over three years of experience specializing in front-end development using Angular, ReactJS, JavaScript, TypeScript, and tools like RxJS, Canvas API, and WCAG for accessibility. I have led multiple projects, including launching the TC+ assessments platform (serving 300+ clients), the AI Screener (used by 500+ candidates monthly), and gamified tools like Process Monitoring and Avatar-based Assessments. My achievements include migrating legacy applications, ensuring AAA WCAG compliance across 11 products, developing reusable libraries like ATOM, and mentoring fellow developers. I hold a B.Tech in Computer Science from Amity School of Engineering (GPA 7.31) and received the Experienced Practitioner award in 2022. My internships at Marksman Technologies and Nethuts helped me refine my web development skills.",
+  summary: "I am a skilled Software Engineer with over three years of experience specializing in front-end development using Angular, ReactJS, JavaScript, TypeScript, and tools like RxJS, Canvas API, and WCAG for accessibility. I have led multiple projects, including launching the TC+ assessments platform (serving 300+ clients), the AI Screener (used by 500+ candidates monthly), and gamified tools like Process Monitoring and Avatar-based Assessments. My achievements include migrating legacy applications, ensuring AAA WCAG compliance across 11 products, developing reusable libraries like ATOM, and mentoring fellow developers. I hold a B.Tech in Computer Science from Amity School of Engineering (GPA 7.31) and received the Experienced Practitioner award in 2022. My internships at Marksman Technologies and Nethuts helped me refine my web development skills.",
   basics: {
     name: ["Chinmaya", "Sharma"],
     email: "",
@@ -25,79 +25,110 @@ export const commonData = {
       startDate: "July 2018",
     },
   ],
-"work": [
+  "work": [
     {
-    "website": "",
-    "endDate": "Present",
-    "highlights": [
-     "Contribute to Prudent's latest platform serving thousands of clients domestically and internationally",
-     "Guide junior developers through technical issues",
-     "Provide technical input to design and product teams for viability of new features"
-    ],
-    "company": "Prudent Insurance Brokers Ltd",
-    "position": "Software Engineer 2",
-    "location": "Gurgaon",
-    "startDate": "October 2025"
-  },
-  {
-    "website": "",
-    "endDate": " September 2025",
-    "highlights": [
-      "Contributed to the development of SHL's AI Screener (SIA), currently in limited release and used by ~500 candidates monthly.",
-      "Assumed increased leadership responsibilities as a Software Engineer, mentoring 4 developers and driving improvements across multiple projects.",
-      "Achieved AAA WCAG compliance across 11 SHL products by implementing accessibility patterns, significantly improving usability for diverse user groups.",
-      "Led the initiative to remove vulnerabilities from 12 legacy products, enabling successful client-side security scans that had previously failed.",
-      "Developed 6 new assessments for the TC+ platform and streamlined the CI/CD pipeline to enhance build reliability and reduce deployment friction."
-    ],
-    "company": "SHL India",
-    "position": "Software Engineer",
-    "location": "Gurgaon",
-    "startDate": "March 2024"
-  },
-  {
-    "highlights": [
-      "Played a pivotal role in launching TC Plus, a new assessments platform adopted by 300+ enterprise clients.",
-      "Designed and developed media-rich assessments to improve candidate engagement and assessment quality.",
-      "Led development of Process Monitoring, a simulation-based assessment now used across three industry sectors.",
-      "Directed migration of 8 applications from AngularJS to Angular and React, improving performance and maintainability.",
-      "Enhanced accessibility across platforms in alignment with WCAG guidelines.",
-      "Created ATOM, a reusable form management library adopted across 5 teams, reducing form development time significantly."
-    ],
-    "company": "SHL India",
-    "position": "Associate Software Engineer",
-    "location": "Gurgaon",
-    "startDate": "January 2022",
-    "endDate": "March 2024"
-  },
-  {
-    "highlights": [
-    ],
-    "company": "Marksman Technologies",
-    "position": "Web Development Intern",
-    "location": "Noida",
-    "startDate": "May 2021",
-    "endDate": "July 2021"
-  },
-  {
-    "highlights": [
-    ],
-    "company": "Nethuts",
-    "position": "Web Development Intern",
-    "location": "Kolkata",
-    "startDate": "September 2020",
-    "endDate": "December 2020"
-  }
-],
+      "website": "https://www.prudentbrokers.com/",
+      "endDate": "Present",
+      "highlights": [
+        "Lead <b>AAA WCAG</b> compliance for Compass platform",
+        "Developed and own AI based priority issue triage system for Compass platform. Reduced manual triage time by <b>60%</b>",
+        "Lead UI development of AI adviser for Compass platform, increasing user adoption by <b>20%</b>"
+      ],
+      "company": "Prudent Insurance Brokers Ltd",
+      "position": "Software Engineer 2",
+      "location": "Gurgaon",
+      "startDate": "October 2025"
+    },
+    {
+      "website": "https://www.shl.com/en-in/",
+      "endDate": " September 2025",
+      "highlights": [
+        "Led the development of <b>SHL's AI Screener (SIA)</b>, currently the product sits at <b>8000+ MAU</b>.",
+        "Achieved <b>AAA WCAG compliance</b> across <b>11</b> SHL products, significantly improving usability for diverse user groups.",
+        "Led the initiative to remove vulnerabilities from <b>12</b> legacy products, enabling successful client-side security scans.",
+        "Developed <b>6 new assessments</b> for TC+ platform and streamlined the CI/CD pipeline, reducing build and deployment times by <b>40%</b>, shaving <b>5 minutes</b> off every code check-in.",
+        "Deployed a self-hosted <b>LibreSpeed</b> instance on internal servers, eliminating third-party API costs and reducing <b>mid-assessment drop-off rates by 30%</b> through precise candidate-to-server latency gating."
+      ],
+      "company": "SHL India",
+      "position": "Software Engineer",
+      "location": "Gurgaon",
+      "startDate": "March 2024"
+    },
+    {
+      "highlights": [
+        "Developed proctoring services for <b>TC+</b> assessments platform, increasing user adoption to <b>300+</b> enterprise clients",
+        "Led development of <b>Process Monitoring</b>, currently used across 3 industry sectors and seeing over <b>10000</b> MAU",
+        "Migrated <b>8</b> applications from AngularJS to Angular and React, decreasing initial load time by <b>80%</b>,  build size by <b>30%</b>",
+        "Created ATOM, a reusable form management library adopted across <b>5</b> teams, reducing form development time significantly."
+      ],
+      "company": "SHL India",
+      "position": "Associate Software Engineer",
+      "location": "Gurgaon",
+      "startDate": "January 2022",
+      "endDate": "March 2024",
+      "website": "https://www.shl.com/en-in/",
+    },
+  ],
   awards: [
     {
       date: "October 2022",
       awarder: "SHL India",
       summary:
-        "Recognised for my work in developing Next Generation assessments (Avatar based assesment and Process Monitoring)",
+        "Recognized for my work in developing Next Generation assessments (Avatar based assessment and Process Monitoring)",
       title: "Experienced Practitioner",
     },
   ],
   sections: ["work", "skills", "projects", "awards", "education"],
+  "skills": [
+    {
+      "level": "",
+      "keywords": [
+        "JavaScript",
+        "Typescript",
+        "SQL",
+        "CQL"
+      ],
+      "name": "Languages"
+    },
+    {
+      "keywords": [
+        "Angular",
+        "ReactJS",
+        "Unity",
+        "Single-SPA",
+        "CapacitorJS",
+        "NodeJS",
+        "ExpressJS",
+        "NestJS",
+        "NextJS"
+      ],
+      "name": "JS Frameworks and Libraries"
+    },
+    {
+      "keywords": [
+        "HTML/CSS",
+        "SCSS",
+        "Reactive forms",
+        "RxJS",
+        "Canvas API",
+        "WCAG",
+        "Git",
+        "Bitbucket",
+        "Hooks API",
+        "Mobile First Design",
+        "Responsive UI",
+        "Jira",
+        "Functional Programming"
+      ],
+      "name": "Tools and Utilities"
+    },
+    {
+      "keywords": [
+        "Antigravity IDE", "Antigravity CLI", "Github Copilot", "Claude Skills", "MCPs", "Agentic Workflows", "AI Agents & Sub-Agents", "AI Harness Development", "Token/Context Optimization"
+      ],
+      "name": "AI"
+    }
+  ]
 };
 
 export interface EducationEntry {
@@ -146,7 +177,7 @@ export interface ResumeHeadings {
   education: string;
   skills: string;
   projects: string;
-  summary:string
+  summary: string
 }
 
 export interface Basics {
@@ -165,5 +196,5 @@ export interface ResumeData {
   projects: ProjectEntry[];
   awards: AwardEntry[];
   sections: string[];
-  summary:string;
+  summary: string;
 }

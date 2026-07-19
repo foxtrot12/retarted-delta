@@ -1,49 +1,5 @@
 export const ngData = {
 
-  "skills": [
-    {
-      "level": "",
-      "keywords": [
-        "Typescript",
-        "JavaScript(ES6)"
-      ],
-      "name": "Programming Languages"
-    },
-    {
-      "keywords": [
-        "Angular",
-        "ReactJS",
-        "Unity",
-        "Single-SPA",
-        "CapacitorJS"
-      ],
-      "name": "JS Frameworks and Libraries"
-    },
-    {
-      "keywords": [
-        "HTML5/CSS3",
-        "SASS",
-        "Reactive forms",
-        "RxJS",
-        "Canvas API",
-        "WCAG",
-        "Git",
-      ],
-      "name": "Others"
-    },
-    {
-      "keywords": [
-        "Jira",
-        "Functional Programming",
-        "Mobile First Design",
-        "Responsive UI",
-        "Material Design",
-        "Restful API",
-        "Bitbucket",
-        "CI/CD"
-      ]
-    }
-  ],
   "projects": [
     {
       "keywords": [

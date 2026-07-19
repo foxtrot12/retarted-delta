@@ -1,49 +1,5 @@
 export const nextData = {
 
-  "skills": [
-    {
-      "level": "",
-      "keywords": [
-        "JavaScript",
-        "Typescript"
-      ],
-      "name": "Programming Languages"
-    },
-    {
-      "keywords": [
-        "ReactJS",
-        "NextJS",
-        "Unity",
-        "Single-SPA",
-        "CapacitorJS"
-      ],
-      "name": "JS Frameworks and Libraries"
-    },
-    {
-      "keywords": [
-        "HTML/CSS",
-        "SCSS",
-        "RxJS",
-        "Canvas API",
-        "WCAG",
-        "Git",
-        "Bitbucket"
-      ],
-      "name": "Others"
-    },
-    {
-      "keywords": [
-        "Functional Programming",
-        "Hooks API",
-        "Context API",
-        "App Router",
-        "Mobile First Design",
-        "Responsive UI",
-        "Jira",
-        "Functional Programming"
-      ]
-    }
-  ],
   "projects": [
     {
       "keywords": [
