@@ -9,6 +9,32 @@ const Resume: React.FC<{
 }> = ({
   resumeData
 }) => {
+    const groupedWork = React.useMemo(() => {
+      if (!resumeData.work) return [];
+      const groups: {
+        company: string;
+        website?: string;
+        location: string;
+        jobs: typeof resumeData.work;
+      }[] = [];
+
+      resumeData.work.forEach((job) => {
+        const existing = groups.find(
+          (g) => g.company.toLowerCase() === job.company.toLowerCase()
+        );
+        if (existing) {
+          existing.jobs.push(job);
+        } else {
+          groups.push({
+            company: job.company,
+            website: job.website,
+            location: job.location,
+            jobs: [job],
+          });
+        }
+      });
+      return groups;
+    }, [resumeData.work]);
 
     return (
       <div
@@ -17,8 +43,7 @@ const Resume: React.FC<{
         {/* Header */}
         <header className="resume-header">
           <h1 className="resume-name">
-            <span>{resumeData.basics.name[0]}</span>
-            <span className="lastName">{resumeData.basics.name[1]}</span>
+            {resumeData.basics.name}
           </h1>
           <div className="resume-contact">
             {resumeData.basics.email && (
@@ -56,38 +81,100 @@ const Resume: React.FC<{
         )}
 
         {/* Work Experience */}
-        {resumeData.work && resumeData.work.length > 0 && (
+        {groupedWork && groupedWork.length > 0 && (
           <section className="resume-section" id="work">
             <h2 className="section-title">
               {resumeData.headings.work || "Work Experience"}
             </h2>
-            {resumeData.work.map((job, index) => (
-              <div key={index} className="work-item">
-                <div className="item-header">
-                  <span className="item-title">
-                    <strong>{job.position}</strong> | <a href={job.website} target="_blank" rel="noopener noreferrer" className="company-name">{job.company}</a>
-                    {job.location && (
-                      <span className="location-name">, {job.location}</span>
-                    )}
-                  </span>
-                  <span className="job-date">
-                    {job.startDate} – {job.endDate}
-                  </span>
-                </div>
-                <div className="job-details">
-                  {job.highlights &&
-                    job.highlights.filter((h) => h.trim() !== "").length > 0 && (
-                      <ul>
-                        {job.highlights
-                          .filter((h) => h.trim() !== "")
-                          .map((hl, idx) => (
-                            <li key={idx} dangerouslySetInnerHTML={{ __html: hl }} />
-                          ))}
-                      </ul>
-                    )}
-                </div>
-              </div>
-            ))}
+            {groupedWork.map((group, index) => {
+              if (group.jobs.length === 1) {
+                const job = group.jobs[0];
+                return (
+                  <div key={index} className="work-item">
+                    <div className="item-header">
+                      <span className="item-title">
+                        {job.website ? (
+                          <a href={job.website} target="_blank" rel="noopener noreferrer" className="company-name">
+                            <strong>{job.company}</strong>
+                          </a>
+                        ) : (
+                          <span className="company-name">
+                            <strong>{job.company}</strong>
+                          </span>
+                        )}
+                        {job.location && (
+                          <span className="location-name">, {job.location}</span>
+                        )}
+                        {" | "}
+                        <span className="position-name">{job.position}</span>
+                      </span>
+                      <span className="job-date">
+                        {job.startDate} – {job.endDate}
+                      </span>
+                    </div>
+                    <div className="job-details">
+                      {job.highlights &&
+                        job.highlights.filter((h) => h.trim() !== "").length > 0 && (
+                          <ul>
+                            {job.highlights
+                              .filter((h) => h.trim() !== "")
+                              .map((hl, idx) => (
+                                <li key={idx} dangerouslySetInnerHTML={{ __html: hl }} />
+                              ))}
+                          </ul>
+                        )}
+                    </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={index} className="work-item-grouped">
+                    <div className="item-header company-parent-header">
+                      <span className="item-title">
+                        {group.website ? (
+                          <a href={group.website} target="_blank" rel="noopener noreferrer" className="company-name">
+                            <strong>{group.company}</strong>
+                          </a>
+                        ) : (
+                          <span className="company-name">
+                            <strong>{group.company}</strong>
+                          </span>
+                        )}
+                        {group.location && (
+                          <span className="location-name">, {group.location}</span>
+                        )}
+                      </span>
+                    </div>
+                    <div className="positions-container">
+                      {group.jobs.map((job, jobIdx) => (
+                        <div key={jobIdx} className="position-item">
+                          <div className="item-header position-header">
+                            <span className="item-title position-title">
+                              <span className="position-name">{job.position}</span>
+                            </span>
+                            <span className="job-date">
+                              {job.startDate} – {job.endDate}
+                            </span>
+                          </div>
+                          <div className="job-details">
+                            {job.highlights &&
+                              job.highlights.filter((h) => h.trim() !== "").length > 0 && (
+                                <ul>
+                                  {job.highlights
+                                    .filter((h) => h.trim() !== "")
+                                    .map((hl, idx) => (
+                                      <li key={idx} dangerouslySetInnerHTML={{ __html: hl }} />
+                                    ))}
+                                </ul>
+                              )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </section>
         )}
 

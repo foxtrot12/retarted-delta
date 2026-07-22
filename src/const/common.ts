@@ -7,9 +7,9 @@ export const commonData = {
     projects: "Projects",
     summary: "Summary"
   },
-  summary: "I am a skilled Software Engineer with over three years of experience specializing in front-end development using Angular, ReactJS, JavaScript, TypeScript, and tools like RxJS, Canvas API, and WCAG for accessibility. I have led multiple projects, including launching the TC+ assessments platform (serving 300+ clients), the AI Screener (used by 500+ candidates monthly), and gamified tools like Process Monitoring and Avatar-based Assessments. My achievements include migrating legacy applications, ensuring AAA WCAG compliance across 11 products, developing reusable libraries like ATOM, and mentoring fellow developers. I hold a B.Tech in Computer Science from Amity School of Engineering (GPA 7.31) and received the Experienced Practitioner award in 2022. My internships at Marksman Technologies and Nethuts helped me refine my web development skills.",
+  "summary": "Front-End Software Engineer with over 4 years of experience building scalable, accessible, and high-performance web applications. Demonstrated track record across front-end engineering, legacy application migrations, and integrating AI workflows. Key achievements include leading AAA WCAG accessibility initiatives across 11+ products, optimizing CI/CD build speeds by 40%, reducing mid-assessment drop-offs by 30% via self-hosted infra, and driving UI development for key AI tools at scale. Highly proficient in Angular, React, TypeScript, RxJS, state management, and modern Web/AI technologies.",
   basics: {
-    name: ["Chinmaya", "Sharma"],
+    name: "Chinmaya Sharma",
     email: "chinmayasharma@aol.com",
     website: "https://chini.vercel.app/",
     phone: "+91 9873526069",
@@ -31,7 +31,7 @@ export const commonData = {
       "endDate": "Present",
       "highlights": [
         "Lead <b>AAA WCAG</b> compliance for Compass platform",
-        "Developed and own AI based priority issue triage system for Compass platform. Reduced manual triage time by <b>60%</b>",
+        "Developed and own <b>AI</b> based priority issue triage system for Compass platform. Reduced manual triage time by <b>60%</b>",
         "Lead UI development of AI adviser for Compass platform, increasing user adoption by <b>20%</b>"
       ],
       "company": "Prudent Insurance Brokers Ltd",
@@ -44,9 +44,10 @@ export const commonData = {
       "endDate": " September 2025",
       "highlights": [
         "Led the development of <b>SHL's AI Screener (SIA)</b>, currently the product sits at <b>8000+ MAU</b>.",
+        "Integrated <b>TC+</b> platform into <b>SHL Japan</b> following its acquisition, serving <b>100,000 MAU</b> across enterprise clients.",
         "Achieved <b>AAA WCAG compliance</b> across <b>11</b> SHL products, significantly improving usability for diverse user groups.",
         "Led the initiative to remove vulnerabilities from <b>12</b> legacy products, enabling successful client-side security scans.",
-        "Developed <b>6 new assessments</b> for TC+ platform and streamlined the CI/CD pipeline, reducing build and deployment times by <b>40%</b>, shaving <b>5 minutes</b> off every code check-in.",
+        "Built <b>6 TC+ assessments</b> and cut <b>CI/CD</b> build times by <b>40%</b>, saving <b>5 minutes</b> per check-in.",
         "Deployed a self-hosted <b>LibreSpeed</b> instance on internal servers, eliminating third-party API costs and reducing <b>mid-assessment drop-off rates by 30%</b> through precise candidate-to-server latency gating."
       ],
       "company": "SHL India",
@@ -59,7 +60,7 @@ export const commonData = {
         "Developed proctoring services for <b>TC+</b> assessments platform, increasing user adoption to <b>300+</b> enterprise clients",
         "Led development of <b>Process Monitoring</b>, currently used across 3 industry sectors and seeing over <b>10000</b> MAU",
         "Migrated <b>8</b> applications from AngularJS to Angular and React, decreasing initial load time by <b>80%</b>,  build size by <b>30%</b>",
-        "Created ATOM, a reusable form management library adopted across <b>5</b> teams, reducing form development time significantly."
+        "Created ATOM, a reusable form management library adopted across <b>5</b> teams, reducing form development time."
       ],
       "company": "SHL India",
       "position": "Associate Software Engineer",
@@ -117,6 +118,8 @@ export const commonData = {
         "Bitbucket",
         "Hooks API",
         "Mobile First Design",
+        "Github",
+        "Github Actions",
         "Responsive UI",
         "Jira",
         "Functional Programming"
@@ -206,7 +209,7 @@ export interface ResumeHeadings {
 }
 
 export interface Basics {
-  name: string[];
+  name: string;
   email: string;
   website: string;
   phone: string

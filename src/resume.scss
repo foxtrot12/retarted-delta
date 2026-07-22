@@ -5,14 +5,18 @@
   --tertiaryColor: #555555;
   --bgColor: #ffffff;
 
+  --fontSize-lg: 20pt;
+  --fontSize-md: 9.5pt;
+  --fontSize-sm: 8.5pt;
+
   width: 8.5in;
   min-height: 11in;
   background-color: var(--bgColor);
   color: var(--primaryColor);
   padding: 0.5in 0.5in;
   box-sizing: border-box;
-  font-size: 10.5pt;
-  line-height: 1.45;
+  font-size: var(--fontSize-md);
+  line-height: 1.1;
   text-align: left;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
@@ -35,7 +39,7 @@
 
   .resume-name {
     margin: 0 0 6px 0;
-    font-size: 22pt;
+    font-size: var(--fontSize-lg);
     font-weight: 700;
     display: inline-flex;
     justify-content: center;
@@ -54,7 +58,7 @@
 
   .resume-contact {
     margin-top: 4px;
-    font-size: 9.5pt;
+    font-size: var(--fontSize-sm);
     color: var(--secondaryColor);
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +66,8 @@
     align-items: center;
     gap: 12px;
 
-    a, span {
+    a,
+    span {
       display: inline-flex;
       align-items: center;
       gap: 4px;
@@ -80,7 +85,7 @@
   }
 
   .section-title {
-    font-size: 11pt;
+    font-size: var(--fontSize-md);
     font-weight: 700;
     text-transform: uppercase;
     color: var(--primaryColor);
@@ -91,10 +96,33 @@
   }
 
   // Experience, Projects, Education, Awards
-  .work-item, .project-item, .award-item, .education-item {
+  .work-item,
+  .work-item-grouped,
+  .project-item,
+  .award-item,
+  .education-item {
     margin-bottom: 10px;
 
     &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .work-item-grouped {
+    .company-parent-header {
+      margin-bottom: 4px;
+    }
+
+    .positions-container {
+      padding-left: 12px;
+      margin-left: 4px;
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .position-item {
       margin-bottom: 0;
     }
   }
@@ -103,16 +131,21 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 10pt;
+    font-size: var(--fontSize-md);
     color: var(--primaryColor);
     margin-bottom: 2px;
 
     .item-title {
-      font-size: 10pt;
+      font-size: var(--fontSize-md);
       color: var(--primaryColor);
     }
 
     .company-name {
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .position-name {
       font-weight: 500;
       font-style: italic;
     }
@@ -122,15 +155,17 @@
       color: var(--tertiaryColor);
     }
 
-    .job-date, .award-date, .education-date {
-      font-size: 9.5pt;
+    .job-date,
+    .award-date,
+    .education-date {
+      font-size: var(--fontSize-sm);
       font-weight: 500;
       color: var(--secondaryColor);
       white-space: nowrap;
     }
 
     .project-link {
-      font-size: 9.5pt;
+      font-size: var(--fontSize-sm);
       font-weight: 400;
       color: var(--tertiaryColor);
       display: inline-flex;
@@ -141,10 +176,11 @@
     .project-keywords {
       font-weight: 400;
       color: var(--tertiaryColor);
+      font-size: var(--fontSize-sm);
     }
 
     .award-title {
-      font-size: 10pt;
+      font-size: var(--fontSize-md);
     }
   }
 
@@ -152,7 +188,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 9.5pt;
+    font-size: var(--fontSize-sm);
     color: var(--secondaryColor);
     margin-top: 1px;
     margin-bottom: 2px;
@@ -167,7 +203,9 @@
   }
 
   // Details & bullet lists
-  .job-details, .award-details, .education-details {
+  .job-details,
+  .award-details,
+  .education-details {
     margin-top: 3px;
 
     ul {
@@ -178,7 +216,7 @@
       li {
         margin-bottom: 2px;
         color: var(--secondaryColor);
-        font-size: 9.5pt;
+        font-size: var(--fontSize-sm);
         line-height: 1.35;
 
         &:last-child {
@@ -190,7 +228,7 @@
     p {
       margin: 0;
       color: var(--secondaryColor);
-      font-size: 9.5pt;
+      font-size: var(--fontSize-sm);
       line-height: 1.35;
     }
   }
@@ -198,14 +236,14 @@
   .summary-text {
     margin: 0;
     color: var(--secondaryColor);
-    font-size: 9.5pt;
+    font-size: var(--fontSize-sm);
     line-height: 1.4;
   }
 
   .project-description {
     margin: 3px 0 0 0;
     color: var(--secondaryColor);
-    font-size: 9.5pt;
+    font-size: var(--fontSize-sm);
     line-height: 1.35;
   }
 
@@ -214,7 +252,7 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    font-size: 9.5pt;
+    font-size: var(--fontSize-sm);
 
     .skill-category {
       color: var(--secondaryColor);
@@ -253,7 +291,8 @@
     width: 100% !important;
     max-width: 100% !important;
     min-height: auto !important;
-    padding: 0 !important; /* Managed by @page margin */
+    padding: 0 !important;
+    /* Managed by @page margin */
     box-shadow: none !important;
   }
 
