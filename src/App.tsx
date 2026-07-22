@@ -17,12 +17,6 @@ function downloadObjectAsJson<T>(exportObj: T, exportName: string): void {
 
 function App() {
   const {
-    fontClass,
-    italicFontClass,
-    pColor,
-    sColor,
-    tColor,
-    bgColor,
     resumeData,
   } = useCustomization();
 
@@ -37,12 +31,6 @@ function App() {
     <main className="flex contentCtr retartedDelta">
       <Resume
         resumeData={resumeData}
-        fontClass={fontClass}
-        italicFontClass={italicFontClass}
-        pColor={pColor}
-        sColor={sColor}
-        tColor={tColor}
-        bgColor={bgColor}
       />
     </main>
   );

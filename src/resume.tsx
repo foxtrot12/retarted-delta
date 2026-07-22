@@ -13,29 +13,12 @@ const Resume: React.FC<{
   fontClass: string | null;
   italicFontClass: string | null;
 }> = ({
-  resumeData,
-  pColor,
-  sColor,
-  tColor,
-  bgColor,
-  fontClass,
-  italicFontClass,
+  resumeData
 }) => {
-    const style = useMemo(() => {
-      const style: CSSProperties & Record<string, string | undefined> = {};
-
-      pColor ? (style["--primaryColor"] = pColor) : null;
-      sColor ? (style["--secondaryColor"] = sColor) : null;
-      tColor ? (style["--tertiaryColor"] = tColor) : null;
-      bgColor ? (style["--bgColor"] = bgColor) : null;
-
-      return style;
-    }, [pColor, sColor, tColor, bgColor]);
 
     return (
       <div
-        style={style}
-        className={`resume-container ${fontClass ?? "latex-serif"}`}
+        className={`resume-container latex-serif`}
       >
         {/* Header */}
         <header className="resume-header">
@@ -145,7 +128,7 @@ const Resume: React.FC<{
                     {project.keywords && project.keywords.length > 0 && (
                       <span className="project-keywords">
                         {" | "}
-                        <span className={italicFontClass ?? "latex-serif-italic"}>
+                        <span className={"latex-serif-italic"}>
                           {project.keywords.join(", ")}
                         </span>
                       </span>
