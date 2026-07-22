@@ -1,4 +1,4 @@
-import React, { CSSProperties, memo, useMemo } from "react";
+import React, { memo } from "react";
 import "./resume.scss";
 import { MdEmail } from "react-icons/md";
 import { FaMobileAlt, FaLink } from "react-icons/fa";
@@ -6,12 +6,6 @@ import { ResumeData } from "./const/common";
 
 const Resume: React.FC<{
   resumeData: ResumeData;
-  pColor: string | null;
-  sColor: string | null;
-  tColor: string | null;
-  bgColor: string | null;
-  fontClass: string | null;
-  italicFontClass: string | null;
 }> = ({
   resumeData
 }) => {
