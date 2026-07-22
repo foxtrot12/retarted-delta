@@ -162,7 +162,7 @@ const Resume: React.FC<{
                     </a>
                   )}
                 </div>
-                <p className="project-description">{project.description}</p>
+                <p className="project-description" dangerouslySetInnerHTML={{ __html: project.description }} />
               </div>
             ))}
           </section>

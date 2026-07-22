@@ -10,9 +10,9 @@ export const commonData = {
   summary: "I am a skilled Software Engineer with over three years of experience specializing in front-end development using Angular, ReactJS, JavaScript, TypeScript, and tools like RxJS, Canvas API, and WCAG for accessibility. I have led multiple projects, including launching the TC+ assessments platform (serving 300+ clients), the AI Screener (used by 500+ candidates monthly), and gamified tools like Process Monitoring and Avatar-based Assessments. My achievements include migrating legacy applications, ensuring AAA WCAG compliance across 11 products, developing reusable libraries like ATOM, and mentoring fellow developers. I hold a B.Tech in Computer Science from Amity School of Engineering (GPA 7.31) and received the Experienced Practitioner award in 2022. My internships at Marksman Technologies and Nethuts helped me refine my web development skills.",
   basics: {
     name: ["Chinmaya", "Sharma"],
-    email: "",
+    email: "chinmayasharma@aol.com",
     website: "https://chini.vercel.app/",
-    phone: "",
+    phone: "+91 9873526069",
   },
   education: [
     {
@@ -94,21 +94,22 @@ export const commonData = {
       "keywords": [
         "Angular",
         "ReactJS",
-        "Unity",
         "Single-SPA",
-        "CapacitorJS",
+        "Docker",
         "NodeJS",
+        "Cloudflare",
         "ExpressJS",
         "NestJS",
         "NextJS"
       ],
-      "name": "JS Frameworks and Libraries"
+      "name": "Frameworks and Libraries"
     },
     {
       "keywords": [
         "HTML/CSS",
         "SCSS",
         "Reactive forms",
+        "Linux",
         "RxJS",
         "Canvas API",
         "WCAG",
@@ -128,6 +129,30 @@ export const commonData = {
       ],
       "name": "AI"
     }
+  ],
+  "projects": [
+    {
+      "keywords": [
+        "Ubuntu",
+        "Docker",
+        "Cloudflare",
+        "Nextcloud",
+        "SSH",
+        "Self-Hosting"
+      ],
+      "name": "Byte-me",
+      "url": "https://byte-me.chinmaya.lol",
+      "description": "Architected and self-hosted a secure home server setup running <b>Nextcloud </b> storage, a media streaming platform, and an <b>SSH</b> remote access server on <b>Ubuntu</b>. Implemented automated daily system health reporting, zero-trust internet exposure via <b>Cloudflare Tunnels</b>, and <b>Docker</b> container orchestration."
+    },
+    {
+      "keywords": [
+        "Typescript",
+        "RxJS"
+      ],
+      "name": "RagaReactive",
+      "url": "https://www.npmjs.com/package/raga-reactive",
+      "description": "Developed <b>RagaReactive</b>, a lightweight, <b>RxJS</b>-based state management utility for reactive applications. Simplifies state handling and subscriptions with a <b>TypeScript</b>-first API. Publicly available on <b>NPM</b>. This has been adopted by <b>SHL</b> and used in <b>3</b> projects for framework agnostic <b>state management</b>."
+    },
   ]
 };
 

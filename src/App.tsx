@@ -9,7 +9,7 @@ function downloadObjectAsJson<T>(exportObj: T, exportName: string): void {
   const downloadAnchor = document.createElement('a');
   downloadAnchor.setAttribute("href", dataStr);
   downloadAnchor.setAttribute("download", `${exportName}.json`);
-  
+
   document.body.appendChild(downloadAnchor);
   downloadAnchor.click();
   document.body.removeChild(downloadAnchor);
@@ -27,9 +27,9 @@ function App() {
   } = useCustomization();
 
   useEffect(() => {
-    const downloadData : any = {...resumeData}
-    downloadData.basics.name = resumeData.basics.name[0]+' '+resumeData.basics.name[1]
-    downloadObjectAsJson(resumeData,`resume.json`)
+    const downloadData: any = { ...resumeData }
+    downloadData.basics.name = resumeData.basics.name[0] + ' ' + resumeData.basics.name[1]
+    downloadObjectAsJson(resumeData, `resume.json`)
     window.print()
   }, []);
 
@@ -49,9 +49,3 @@ function App() {
 }
 
 export default App;
-
-export interface ResumeParams {
-  rType: RTypeT;
-}
-
-export type RTypeT = "react" | "ng" | "std" | "next" | "mern";
