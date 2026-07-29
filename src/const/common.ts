@@ -98,6 +98,7 @@ export const commonData = {
         "Single-SPA",
         "Docker",
         "NodeJS",
+        "ThreeJS",
         "Cloudflare",
         "ExpressJS",
         "NestJS",
@@ -109,6 +110,7 @@ export const commonData = {
       "keywords": [
         "HTML/CSS",
         "SCSS",
+        "WebGL",
         "Reactive forms",
         "Linux",
         "RxJS",
